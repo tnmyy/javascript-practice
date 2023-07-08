@@ -49,8 +49,6 @@ for (let i = 1; i < n; i++) {
 }
 console.log(`Factorial of ${n} is ${factorial}`);
 
-// 6. Count Characters: Write a loop that counts the number of occurrences of a specific character in a given string.
-
 // 8. Find Prime Numbers: Write a loop that finds and prints all prime numbers between 1 and 50.
 
 // 9. Array Sum: Write a loop that calculates the sum of all numbers in an array.
@@ -66,8 +64,6 @@ for (let i = revCount; i > 0; i--) {
   console.log(i);
 }
 
-// 12. String Concatenation: Write a loop that takes an array of strings and concatenates them to form a single string. ([for loop or for-of loop])
-
 // 13. Sum of Array: Write a loop that calculates the sum of all numbers in an array. ([for loop or for-of loop])
 
 let numArr = [4, 8, 12, 16, 20];
@@ -79,8 +75,6 @@ for (let num of numArr) {
   numbers += num;
 }
 console.log(numbers);
-
-// 14. Character Frequency: Write a loop that counts the frequency of each character in a given string and prints the result. ([for-of loop])
 
 // 16. Number Pattern: Write a loop that prints the numbers in the pattern 1, 2, 3, 4, 3, 2, 1. ([for loop])
 
@@ -193,3 +187,57 @@ for (let character of vowelStr) {
 }
 
 console.log(`The total number of vowels in ${vowelStr} are ${vowelCount} `);
+
+// 12. String Concatenation: Write a loop that takes an array of strings and concatenates them to form a single string. ([for loop or for-of loop])
+
+console.log(`String concatenation`);
+
+let arrStr = ["I", " ", "am", " ", "Tanmay", " ", "Upreti"];
+console.log(arrStr);
+
+let newArrStr = "";
+
+for (let str of arrStr) {
+  newArrStr += str;
+}
+
+console.log(newArrStr);
+
+// 14. Character Frequency: Write a loop that counts the frequency of each character in a given string and prints the result. ([for-of loop])
+
+console.log(`Character Frequency`);
+
+let frequencyStr = "Tanmay Upreti";
+let lowerFrequencyStr = frequencyStr.toLowerCase();
+console.log(lowerFrequencyStr);
+
+let charFrequency = {};
+
+for (const char of lowerFrequencyStr) {
+  if (charFrequency[char]) {
+    charFrequency[char]++;
+  } else {
+    charFrequency[char] = 1;
+  }
+}
+
+for (const char in charFrequency) {
+  console.log(`${char}: ${charFrequency[char]}`);
+}
+
+// 6. Count Characters: Write a loop that counts the number of occurrences of a specific character in a given string.
+
+console.log(`Specific character counter`);
+
+let newCharStr = "Tanmay Upreti".toLowerCase();
+
+let newCharLetter = "t";
+let newCharCount = 0;
+
+for (let i = 0; i < newCharStr.length; i++) {
+  if (newCharStr[i] == newCharLetter) {
+    newCharCount++;
+  }
+}
+
+console.log(`${newCharLetter} occurs in ${newCharStr} ${newCharCount} times.`);
