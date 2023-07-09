@@ -49,13 +49,7 @@ for (let i = 1; i < n; i++) {
 }
 console.log(`Factorial of ${n} is ${factorial}`);
 
-// 8. Find Prime Numbers: Write a loop that finds and prints all prime numbers between 1 and 50.
-
-// 9. Array Sum: Write a loop that calculates the sum of all numbers in an array.
-
-// 10. Array Average: Write a loop that calculates the average of numbers in an array.
-
-// 11. Countdown: Write a loop that counts down from 10 to 1 and prints the numbers. ([for loop])
+// 5. Countdown: Write a loop that counts down from 10 to 1 and prints the numbers. ([for loop])
 
 console.log(`Reverse countdown form 10 to 1`);
 let revCount = 10;
@@ -64,7 +58,7 @@ for (let i = revCount; i > 0; i--) {
   console.log(i);
 }
 
-// 13. Sum of Array: Write a loop that calculates the sum of all numbers in an array. ([for loop or for-of loop])
+// 6. Sum of Array: Write a loop that calculates the sum of all numbers in an array. ([for loop or for-of loop])
 
 let numArr = [4, 8, 12, 16, 20];
 console.log(`Sum of numbers ${numArr}`);
@@ -76,7 +70,7 @@ for (let num of numArr) {
 }
 console.log(numbers);
 
-// 16. Number Pattern: Write a loop that prints the numbers in the pattern 1, 2, 3, 4, 3, 2, 1. ([for loop])
+// 7. Number Pattern: Write a loop that prints the numbers in the pattern 1, 2, 3, 4, 3, 2, 1. ([for loop])
 
 console.log(
   `Number in reverse order till 1 then again ascends till the number`
@@ -91,7 +85,7 @@ for (let i = num - 1; i >= 1; i--) {
   console.log(i);
 }
 
-// 17. Factorial Calculation: Write a loop that calculates the factorial of a given number. ([for loop or while loop])
+// 8. Factorial Calculation: Write a loop that calculates the factorial of a given number. ([for loop or while loop])
 
 console.log(`Factorial`);
 let factorialNum = 10;
@@ -106,7 +100,7 @@ while (x <= 10) {
 }
 console.log(factN);
 
-// 19. Table of Squares: Write a loop that prints a table of squares from 1 to 10. ([for loop])
+// 9. Table of Squares: Write a loop that prints a table of squares from 1 to 10. ([for loop])
 
 console.log(`Square`);
 
@@ -116,7 +110,7 @@ for (let i = 1; i <= squareNum; i++) {
   console.log(`The square of ${i} is ${i * i}`);
 }
 
-// 18. String Uppercase: Write a loop that converts all characters in a string to uppercase. ([for loop or for-of loop])
+// 10. String Uppercase: Write a loop that converts all characters in a string to uppercase. ([for loop or for-of loop])
 
 console.log(`Converting all the characters of a string to uppercase`);
 
@@ -126,7 +120,7 @@ for (let i = 0; i < str.length; i++) {
   console.log(str[i].toUpperCase());
 }
 
-// 5. Reverse a String: Write a loop that takes a string as input and prints it in reverse order.
+// 11. Reverse a String: Write a loop that takes a string as input and prints it in reverse order.
 
 console.log(`Reversing a string`);
 
@@ -137,7 +131,7 @@ for (let i = str.length - 1; i >= 0; i--) {
   // console.log(i);
 }
 
-// 15. Array Reversal: Write a loop that reverses the order of elements in an array. ([for loop or while loop])
+// 12. Array Reversal: Write a loop that reverses the order of elements in an array. ([for loop or while loop])
 
 console.log(`Reversing the order of elements of an array`);
 
@@ -149,7 +143,7 @@ for (let i = loopArr.length - 1; i >= 0; i--) {
   console.log(loopArr[i]);
 }
 
-// 7. Fibonacci Sequence: Write a loop that generates and prints the first 10 numbers in the Fibonacci sequence. The Fibonacci sequence is a series of numbers in which each number is the sum of the two preceding ones.
+// 13. Fibonacci Sequence: Write a loop that generates and prints the first 10 numbers in the Fibonacci sequence. The Fibonacci sequence is a series of numbers in which each number is the sum of the two preceding ones.
 
 console.log(`Fibonacci Sequence`);
 
@@ -164,7 +158,7 @@ for (let i = 1; i <= fibonacci; i++) {
   console.log(num3);
 }
 
-// 20. Vowel Count: Write a loop that counts the number of vowels (a, e, i, o, u) in a given string. ([for-of loop])
+// 14. Vowel Count: Write a loop that counts the number of vowels (a, e, i, o, u) in a given string. ([for-of loop])
 
 console.log(`Vowel Counter`);
 
@@ -188,7 +182,7 @@ for (let character of vowelStr) {
 
 console.log(`The total number of vowels in ${vowelStr} are ${vowelCount} `);
 
-// 12. String Concatenation: Write a loop that takes an array of strings and concatenates them to form a single string. ([for loop or for-of loop])
+// 15. String Concatenation: Write a loop that takes an array of strings and concatenates them to form a single string. ([for loop or for-of loop])
 
 console.log(`String concatenation`);
 
@@ -203,7 +197,72 @@ for (let str of arrStr) {
 
 console.log(newArrStr);
 
-// 14. Character Frequency: Write a loop that counts the frequency of each character in a given string and prints the result. ([for-of loop])
+// 16. Count Characters: Write a loop that counts the number of occurrences of a specific character in a given string.
+
+console.log(`Specific character counter`);
+
+let newCharStr = "Tanmay Upreti".toLowerCase();
+
+let newCharLetter = "t";
+let newCharCount = 0;
+
+for (let i = 0; i < newCharStr.length; i++) {
+  if (newCharStr[i] == newCharLetter) {
+    newCharCount++;
+  }
+}
+
+console.log(`${newCharLetter} occurs in ${newCharStr} ${newCharCount} times.`);
+
+// 17. Array Sum: Write a loop that calculates the sum of all numbers in an array.
+
+console.log(`Sum of numbers in an Array`);
+
+let arrNum = [63, 59, 58, 2, 36, 5, 0, 5, 7, 2, 8, 52];
+let arrNumSum = 0;
+
+for (let i = 0; i < arrNum.length; i++) {
+  arrNumSum += arrNum[i];
+}
+
+console.log(`The sum of ${arrNum} is ${arrNumSum}`);
+
+// 18. Array Average: Write a loop that calculates the average of numbers in an array.
+
+console.log(`Average of numbers in an array`);
+
+let arrNumAvg = 0;
+
+for (let i = 0; i < arrNum.length; i++) {
+  arrNumAvg = (arrNumSum / arrNum.length).toFixed(3);
+}
+
+console.log(`The average of ${arrNum} is ${arrNumAvg}`);
+
+// 19. Find Prime Numbers: Write a loop that finds and prints all prime numbers between 1 and 50.
+
+console.log(`Prime numbers`);
+
+let startWithNum = 2;
+let endWithNum = 1000;
+
+console.log(`Prime Numbers b/w ${startWithNum} and ${endWithNum} are:`);
+for (let num = startWithNum; num <= endWithNum; num++) {
+  let isPrime = true;
+
+  for (let i = startWithNum; i < num; i++) {
+    if (num % i === 0) {
+      isPrime = false;
+      break;
+    }
+  }
+
+  if (isPrime) {
+    console.log(num);
+  }
+}
+
+// 20. Character Frequency: Write a loop that counts the frequency of each character in a given string and prints the result. ([for-of loop])
 
 console.log(`Character Frequency`);
 
@@ -224,20 +283,3 @@ for (const char of lowerFrequencyStr) {
 for (const char in charFrequency) {
   console.log(`${char}: ${charFrequency[char]}`);
 }
-
-// 6. Count Characters: Write a loop that counts the number of occurrences of a specific character in a given string.
-
-console.log(`Specific character counter`);
-
-let newCharStr = "Tanmay Upreti".toLowerCase();
-
-let newCharLetter = "t";
-let newCharCount = 0;
-
-for (let i = 0; i < newCharStr.length; i++) {
-  if (newCharStr[i] == newCharLetter) {
-    newCharCount++;
-  }
-}
-
-console.log(`${newCharLetter} occurs in ${newCharStr} ${newCharCount} times.`);
