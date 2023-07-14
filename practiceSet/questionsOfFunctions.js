@@ -151,4 +151,58 @@ function perfectSquare(num) {
 perfectSquare(64);
 perfectSquare(12345654321);
 
-// More questions will be practiced after understanding array and string functions and operations
+// 10. Write a function that takes two numbers as parameters and returns the difference between the larger number and the smaller number.
+
+console.log(`Difference b/w larger and smaller number`);
+
+function difference(n1, n2) {
+  let max = Math.max(n1, n2);
+  let min = Math.min(n1, n2);
+  let answer = (max - min).toFixed(3);
+  let difference = `The difference b/w ${max} and ${min} is: ${answer}`;
+  return difference;
+}
+console.log(difference(1.023, 2.002));
+
+// 11. Write a function that takes two numbers as parameters and returns the quotient and remainder of the division of the first number by the second number
+
+console.log(`Quotient and Remainder`);
+
+function division(n1, n2) {
+  let quotient = Number(n1 / n2).toFixed(3);
+  let remainder = n1 % n2;
+  console.log(`The quotient of ${n1}/${n2} is: ${quotient}`);
+  console.log(`The remainder of ${n1}/${n2} is: ${remainder}`);
+}
+
+division(10, 51);
+
+// 12. Write a function that takes a number as a parameter and returns the sum of all the digits in that number.
+
+console.log(`Sum of digits in a number`);
+
+let sumOfDigits = 0;
+function digits(num) {
+  let number = num.toString();
+
+  for (digits of number) {
+    number = Number.parseInt(digits);
+    sumOfDigits += number;
+  }
+  return sumOfDigits;
+}
+console.log(digits(8569825484698645));
+
+// 13. Write a function that takes a number as a parameter and returns the reverse of that number.
+
+console.log(`Reversing Number`);
+
+let revNum;
+function reverseNum(num) {
+  let rev = num.toString();
+  for (let i = rev.length - 1; i >= 0; i--) {
+    console.log(rev[i]);
+  }
+}
+
+reverseNum(90983748);
