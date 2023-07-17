@@ -109,3 +109,42 @@ console.log(trim.trimStart());
 
 // 12. trimEnd() = removes white space from end
 console.log(trim.trimEnd());
+
+// 13. padStart(length, iterable) = if length >4, puts iterable from start of the string
+console.log(`padStart()`);
+
+str = 1234567890;
+str = str.toString();
+console.log(str.slice(str.length - 3).padStart(str.length, "*"));
+
+// 14. padEnd(length, iterable) = if length >4, puts iterable from end of the string
+console.log(`padEnd()`);
+
+str = 1234567890;
+str = str.toString();
+console.log(str.slice(0, str.length - 7).padEnd(str.length, "*"));
+
+// 15. charAt() = gives character with a specific index
+console.log(`charAt()`);
+
+str = "String";
+console.log(str.charAt(0));
+
+// 16. charCodeAt() = gives unicode of character (0-65535)
+console.log(`charCodeAt()`);
+
+console.log(str.charCodeAt(3));
+
+// 17. split(separator, limit) = string to array separating with matching separator
+console.log(`split()`);
+
+console.log(names);
+
+let namesArr = names.split(" ");
+console.log(namesArr);
+
+namesArr = names.split("");
+console.log(namesArr);
+
+namesArr = names.split(", ", 2);
+console.log(namesArr);
