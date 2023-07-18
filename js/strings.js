@@ -148,3 +148,48 @@ console.log(namesArr);
 
 namesArr = names.split(", ", 2);
 console.log(namesArr);
+
+// STRING SEARCH METHODS
+
+console.log(`STRING SEARCH METHODS`);
+
+// 1. indexOf() = Returns index of first word of the given match starts form starts
+// indexOf(match, start) ; start param = start searching from a specific index
+// if not found, returns '-1'
+
+console.log(`indexOf()`);
+
+let frndz = "Tanmay, Vaibhav, Naman, Jay, 'Tanmay', 'Vaibhav', 'Naman', 'Jay'";
+console.log(frndz);
+
+console.log(frndz.indexOf("Naman"));
+console.log(frndz.indexOf("Vaibhav"));
+console.log(frndz.indexOf("Jay"));
+console.log(frndz.indexOf("Tanmay"));
+console.log(frndz.indexOf("III Person")); // returns -1
+
+console.log(frndz.indexOf("Naman", 29));
+console.log(frndz.indexOf("Vaibhav", 29));
+console.log(frndz.indexOf("Jay", 29));
+console.log(frndz.indexOf("Tanmay", 29));
+
+// 2. lastIndexOf() = Returns index of first word of the given match and starts form last
+// lastIndexOf(match, start) ; start param = start searching from a specific index
+
+console.log(`lastIndexOf()`);
+
+console.log(frndz);
+console.log(frndz.lastIndexOf("Naman"));
+console.log(frndz.lastIndexOf("Vaibhav"));
+console.log(frndz.lastIndexOf("Jay"));
+console.log(frndz.lastIndexOf("Tanmay"));
+
+// 3. search() = Can search a string in a string but cannot take a second param
+
+console.log(`search()`);
+
+console.log(names);
+console.log(frndz.search(/'Naman'/));
+console.log(frndz.search(/'Vaibhav'/));
+console.log(frndz.search(/'Jay'/));
+console.log(frndz.search(/'Tanmay'/));
