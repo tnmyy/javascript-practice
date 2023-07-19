@@ -188,8 +188,65 @@ console.log(frndz.lastIndexOf("Tanmay"));
 
 console.log(`search()`);
 
-console.log(names);
+console.log(frndz);
 console.log(frndz.search(/'Naman'/));
 console.log(frndz.search(/'Vaibhav'/));
 console.log(frndz.search(/'Jay'/));
 console.log(frndz.search(/'Tanmay'/));
+
+// 4. match() = returns an array containing the results of a matching string against a string
+
+console.log(`match()`);
+
+str = "The more you bear the PAIN, the more you get the gain";
+console.log(str);
+
+let strArr = str.match("ain");
+console.log(strArr);
+
+strArr = str.match(/ain/);
+console.log(strArr);
+
+strArr = str.match(/ain/g);
+console.log(strArr);
+
+strArr = str.match(/ain/gi);
+console.log(strArr);
+
+// 5. matchAll()
+
+console.log(`matchAll()`);
+
+// 6. includes(val, index) = returns true if a string contains specific value
+
+console.log(`includes()`);
+
+console.log(str);
+console.log(str.includes("PAIN"));
+console.log(str.includes("pain"));
+console.log(str.includes(" "));
+
+console.log(str.includes("AIN", 15));
+
+// 7. startsWith(value, index) = returns boolean
+
+console.log(`startsWith()`);
+
+console.log(str);
+console.log(str.startsWith("the")); // false
+console.log(str.startsWith("The")); // true
+
+console.log(str.startsWith("the", 18)); // true
+console.log(str.startsWith("The", 18)); // false
+
+// 7. endsWith(value, index) = returns boolean
+// index = checks the first n indexes of the str and returns boolean
+
+console.log(`endsWith()`);
+
+console.log(str);
+console.log(str.endsWith("gain")); // false
+console.log(str.endsWith("the")); // true
+
+console.log(str.endsWith("gain", 21)); // false
+console.log(str.endsWith("the", 21)); // true
