@@ -48,6 +48,29 @@ for (let i = 0; i < sub.length; i++) {
   console.log(sub[i]);
 }
 
-// forEach()
+// Adding elements to array
 
-console.log(`forEach()`);
+console.log(`Adding elements to array`);
+
+console.log(sub);
+sub.push("Psychology");
+console.log(sub);
+
+sub[sub.length] = "Commerce";
+console.log(sub);
+
+// HOLES IN ARRAY
+
+console.log(`HOLES IN ARRAY`);
+
+sub[20] = "000";
+console.log(sub);
+
+// Checking is it an array
+console.log(`Checking is it an array`);
+
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+console.log(arr);
+
+console.log(typeof arr); // Returns object
+console.log(Array.isArray(arr));
