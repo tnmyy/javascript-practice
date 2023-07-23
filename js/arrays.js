@@ -1,6 +1,6 @@
-// Arrays in JS
-
 console.log(`Arrays in JS`);
+
+// I.  Arrays in JS
 
 // Creating an Array
 
@@ -74,3 +74,7 @@ console.log(arr);
 
 console.log(typeof arr); // Returns object
 console.log(Array.isArray(arr));
+
+// II. ARRAY METHODS
+
+// length = return length
