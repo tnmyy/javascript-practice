@@ -77,4 +77,105 @@ console.log(Array.isArray(arr));
 
 // II. ARRAY METHODS
 
-// length = return length
+console.log(`ARRAY METHODS`);
+arr = ["Banana", "Orange", "Apple", "Mango"];
+console.log(arr);
+
+// 1. length = return length
+
+console.log(`Array.length`);
+console.log(arr.length);
+
+// 2. toString() = converts array to a string
+
+console.log(`toString()`);
+console.log(arr.toString());
+
+// 3. join() = converts arr to str but with a separator
+
+console.log(`join()`);
+console.log(arr.join(" "));
+console.log(arr.join(" + "));
+
+// 4. pop() = removes last element form the arr and returns popped element
+
+console.log(`pop()`);
+console.log(arr.pop());
+console.log(arr);
+
+// 5. push() = add new element from last element form the arr and returns new arr length
+
+console.log(`push()`);
+console.log(arr.push("Guava"));
+console.log(arr);
+
+// 6. shift() = removes first arr element returns shifted element
+
+console.log(`shift()`);
+console.log(arr.shift());
+console.log(arr);
+
+// 7. unshift() = add new element from first & returns new arr length
+
+console.log(`unshift()`);
+console.log(arr.unshift("Grape"));
+console.log(arr);
+
+// 8. Changing elements
+
+console.log(`Changing Elements`);
+arr[1] = "Strawberry";
+arr[2] = "Kiwi";
+console.log(arr);
+
+// Easy and secure way to append a new element from end
+arr[arr.length] = "Papaya";
+console.log(arr);
+
+// 9. concat() = Creates new array by concatenating existing arrays
+
+console.log(`concat()`);
+let theBoyz = ["Naman", "Jay", "Vaibhav"];
+console.log(theBoyz);
+let theGirlz = ["Jiya", "Aayushi", "Anjali", "Sapna"];
+console.log(theGirlz);
+let theFrndz = theBoyz.concat(theGirlz);
+console.log(theFrndz);
+
+let gymBroz = ["Siddharth", "Nitin", "Yash Raj"];
+console.log(gymBroz);
+theFrndz = theGirlz.concat(theBoyz, gymBroz);
+console.log(theFrndz);
+
+theBoyz = theBoyz.concat("Ayush");
+console.log(theBoyz);
+
+// 10. splice(param1, param2) = adds new item to an array & returns array of deleted items
+// param1 = where the element(s) should be placed
+// param2 = how many element(s) should be removed (from start)
+
+console.log(`splice() for adding elements`);
+console.log(arr);
+console.log(arr.splice(2, 0, "Lichi", "Dates")); // deleted elements
+console.log(arr);
+console.log(arr.splice(0, 3, "Pineapple", "Peach")); // deleted elements
+console.log(arr);
+
+// splice() = can be used to remove array elements without leaving holes
+
+console.log(`splice() for removing elements`);
+console.log(arr);
+console.log(arr.splice(0, 2));
+console.log(arr);
+
+// 12. slice(param1, param2) = makes a new array from old one
+// param1 = where to start
+// param2 = where to end (param2 excluded)
+
+console.log(`slice()`);
+console.log(arr);
+let newArr = arr.slice(0, 3);
+console.log(newArr);
+
+newArr = arr.slice(1);
+console.log(newArr);
