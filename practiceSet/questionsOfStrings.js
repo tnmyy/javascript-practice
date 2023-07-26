@@ -48,11 +48,9 @@ function palindrome(str) {
 
 palindrome(`CiVic`);
 
-// Longest Word: Write a function that takes a sentence as input and returns the longest word in the sentence. If there are multiple words with the same length, return the first one.
-
 // Title Case a Sentence: Write a function that takes a sentence as input and converts it into title case. Title case means that the first letter of each word is capitalized, and the rest of the letters are in lowercase.
 
-console.log(`4. Title Case`);
+console.log(`3. Title Case`);
 
 function titleCase(str) {
   str = str.split(" ");
@@ -67,7 +65,55 @@ function titleCase(str) {
 
 titleCase("Tanmay is my Name");
 
+// Longest Word: Write a function that takes a sentence as input and returns the longest word in the sentence. If there are multiple words with the same length, return the first one.
+
+console.log(`4. Longest word in a sentence checker`);
+
+function longestWordChecker(sentence) {
+  const words = sentence.split(" ");
+
+  let longestWord = "";
+  let longestWordLength = 0;
+
+  for (const word of words) {
+    // console.log(words[word]);
+    const wordLength = word.length;
+    // console.log(wordLength);
+
+    if (wordLength > longestWordLength) {
+      longestWord = word;
+      longestWordLength = wordLength;
+    }
+  }
+
+  sentence = sentence
+    .slice(0, sentence.length - sentence.length + 10)
+    .padEnd(sentence.length - sentence.length + 13, ".");
+
+  let output = `The longest word in '${sentence}' is "${longestWord}" of length ${longestWordLength}`;
+  return output;
+}
+
+let sent =
+  "Write a function that takes a sentence as input and returns the longest word in the sentence. If there are multiple words with the same length, return the first one.";
+console.log(longestWordChecker(sent));
+
 // Count Vowels: Create a function that takes a string as input and returns the number of vowels (a, e, i, o, u) in the string.
+
+console.log(`5. Vowel counter`);
+
+function vowelCounter(str) {
+  let word = str.toString().toLowerCase();
+  let vowelCount = 0;
+
+  for (const char of word) {
+    if ("aeiou".includes(char)) {
+      vowelCount++;
+    }
+  }
+  console.log(`Total number of vowels in ${str} is ${vowelCount}`);
+}
+vowelCounter("Tanmay");
 
 // Character Frequency: Write a function that takes a string as input and returns an object with the frequency of each character in the string. The keys of the object should be the characters, and the values should be the number of times they appear in the string.
 
