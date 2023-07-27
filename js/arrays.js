@@ -179,3 +179,34 @@ console.log(newArr);
 
 newArr = arr.slice(1);
 console.log(newArr);
+
+// III. ARRAY SORT
+
+// 1. sort() = sorts the array alphabetically
+
+console.log(`sort()`);
+console.log(theFrndz);
+
+console.log(theFrndz.sort());
+
+// 2. reverse() = reverses the array elements
+
+console.log(`reverse()`);
+console.log(theFrndz.sort().reverse());
+
+// Numerical Sorting
+
+console.log(`Numerical Sorting`);
+arr = [2, 3, 5, 6, 7, 9, 8, 4, 1, 0];
+
+console.log(arr);
+console.log(
+  arr.sort(function (a, b) {
+    return a - b;
+  })
+);
+console.log(
+  arr.sort(function (a, b) {
+    return b - a;
+  })
+);
