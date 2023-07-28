@@ -210,3 +210,64 @@ console.log(
     return b - a;
   })
 );
+
+// Highest or Lowest Value
+
+arr = [2, 3, 5, 6, 7, 9, 8, 4, 1, 0];
+
+console.log(`Highest or Lowest Value`);
+
+arr.sort(function (a, b) {
+  return a - b;
+});
+
+console.log(arr[0]); // Lowest Value
+console.log(arr[arr.length - 1]); // Highest Value
+
+arr.sort(function (a, b) {
+  return b - a;
+});
+
+console.log(arr[0]); // Highest Value
+console.log(arr[arr.length - 1]); // Lowest Value
+
+// 3. Min/Max in Arrays
+
+arr = [2, 3, 5, 6, 7, 9, 8, 4, 1, 0];
+
+console.log(Math.min.apply(null, arr));
+console.log(Math.max.apply(null, arr));
+
+// 4. Array Object Sorting
+
+const cars = [
+  { name: "Volvo", year: 2016 },
+  { name: "Saab", year: 2001 },
+  { name: "BMW", year: 2010 },
+];
+
+// Sorting via year
+
+console.log(cars);
+console.log(
+  cars.sort(function (a, b) {
+    return a.year - b.year;
+    // return b.year - a.year;
+  })
+);
+
+// Sorting via name
+
+cars.sort(function (a, b) {
+  let x = a.name.toLowerCase();
+  let y = b.name.toLowerCase();
+
+  if (x > y) {
+    return -1;
+  }
+  if (y > x) {
+    return -1;
+  }
+
+  return 0;
+});
