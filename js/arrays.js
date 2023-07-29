@@ -271,3 +271,40 @@ cars.sort(function (a, b) {
 
   return 0;
 });
+
+// IV. Array Iteration
+// Operates on every array item
+
+// 1. forEach() = takes each array element to iterate over it
+
+console.log(`forEach()`);
+arr = [12, 15, 17];
+console.log(arr);
+
+arr.forEach((element) => {
+  console.log(element * element);
+});
+
+// Traditional Arguments of forEach()
+
+arr.forEach((val, ind, arr) => {
+  console.log(val, ind, arr);
+});
+
+// 2. map() = creates a new array by performing some functions on the array
+
+console.log(`map()`);
+
+arr = [12, 15, 17];
+console.log(arr);
+
+newArr = arr.map((val) => {
+  return val + 1;
+});
+console.log(newArr);
+
+// Traditional Arguments of map()
+
+arr.map((val, ind, arr) => {
+  console.log(val, ind, arr);
+});
