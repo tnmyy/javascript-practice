@@ -308,3 +308,33 @@ console.log(newArr);
 arr.map((val, ind, arr) => {
   console.log(val, ind, arr);
 });
+
+// 3. filter() = new array with array elements that pass a test.
+
+console.log(`filter()`);
+
+arr = [2, 3, 63, 69, 65232, 695, 23, 30];
+console.log(arr);
+
+newArr = arr.filter((val) => {
+  return val % 3 == 0;
+});
+
+console.log(newArr);
+
+// Traditional Arguments of filter()
+
+arr.filter((val, ind, arr) => {
+  // console.log(val, ind, arr);
+  console.log(`${val} + ${ind} + ${arr[ind]} =`, val + ind + arr[ind]);
+});
+
+// 4. reduce() = runs a function on each array element to produce (reduce it to) a single value. [Runs Left to Right]
+
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+newArr = arr.reduce((n1, n2) => {
+  return n1 + n2;
+});
+
+console.log(`The sum of first ${arr.length} natural numbers is`, newArr);
