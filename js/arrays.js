@@ -338,3 +338,62 @@ newArr = arr.reduce((n1, n2) => {
 });
 
 console.log(`The sum of first ${arr.length} natural numbers is`, newArr);
+
+// reduceRight() = Runs from Right to Left
+
+newArr = arr.reduceRight((n1, n2) => {
+  return n1 - n2;
+});
+
+console.log(`The sum of first ${arr.length} natural numbers is`, newArr);
+
+// 5. every() = checks if all array values passes test
+
+console.log(`every()`);
+
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+newArr = arr.every((val) => {
+  return val > 9;
+});
+console.log(newArr); // false b/c not every value in array is not greater than 9
+
+newArr = arr.every((val) => {
+  return val > 0;
+});
+console.log(newArr); // true b/c not every value in array is greater than 0
+
+// 6. some() = checks if some array values passes test
+
+console.log(`some()`);
+
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+newArr = arr.some((val) => {
+  return val > 9;
+});
+console.log(newArr); // true b/c 1 value in array is greater than 9
+
+newArr = arr.some((val) => {
+  return val > 0;
+});
+console.log(newArr); // true b/c not every value in array is greater than 0
+
+// 6. indexOf() = Returns index of first word of the given match starts form starts
+// indexOf(match, start) ; start param = start searching from a specific index
+// if not found, returns '-1'
+
+arr = ["Apple", "Orange", "Apple", "Mango"];
+console.log(arr.indexOf("Apple"));
+
+arr = ["Apple", "Orange", "Apple", "Mango"];
+console.log(arr.indexOf("Apple", 1));
+
+// 7. lastIndexOf() = Returns index of first word of the given match and starts form last
+// lastIndexOf(match, start) ; start param = start searching from a specific index
+
+arr = ["Apple", "Orange", "Apple", "Mango"];
+console.log(arr.lastIndexOf("Apple"));
+
+arr = ["Apple", "Orange", "Apple", "Mango"];
+console.log(arr.lastIndexOf("Apple", -3));
