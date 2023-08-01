@@ -397,3 +397,79 @@ console.log(arr.lastIndexOf("Apple"));
 
 arr = ["Apple", "Orange", "Apple", "Mango"];
 console.log(arr.lastIndexOf("Apple", -3));
+
+// 8. find() = returns the value of the first array element that passes the test
+
+console.log(`find()`);
+
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+newArr = arr.find((val) => {
+  return val % 4 === 0;
+});
+
+console.log(newArr);
+
+// 9. findIndex() = returns the index of the first array element that passes the test
+
+console.log(`findIndex()`);
+
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+newArr = arr.findIndex((val) => {
+  return val % 4 === 0;
+});
+
+console.log(newArr);
+
+// 10. from() = returns an Array object from any object with a length property or any iterable object.
+
+console.log(`from()`);
+
+let str = "Tanmay";
+console.log(str);
+console.log(typeof str);
+
+str = Array.from(str);
+console.log(str);
+console.log(typeof str);
+
+// 11. keys() = returns an Array Iterator object with the keys of an array.
+
+console.log(`keys()`);
+
+arr = ["Banana", "Orange", "Apple", "Mango"];
+
+for (let x of arr.keys()) {
+  console.log(x);
+}
+
+// 12. entries() =  returns a new array iterator object that contains the key/value pairs for each index in the array.
+
+console.log(`entries()`);
+
+arr = ["Banana", "Orange", "Apple", "Mango"];
+
+for (let x of arr.entries()) {
+  console.log(x);
+}
+
+// 13. includes() = checks whether the searched item is in the array or not
+
+console.log(`includes()`);
+
+arr = ["Banana", "Orange", "Apple", "Mango"];
+
+console.log(arr.includes("Mango"));
+
+// 14. spread() =  expands an iterable (like an array) into more elements:
+
+console.log(`spread()`);
+
+arr = [1, 2, 3];
+let arr1 = [4, 5, 6];
+let obj = { ...arr };
+console.log(obj);
+
+newArr = [...arr, ...arr1];
+console.log(newArr);
