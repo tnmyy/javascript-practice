@@ -45,8 +45,41 @@ console.log(reverseArr(arr3));
 // 4. Given an array of names, write a function to create a new array containing only the names starting with a specific letter. (Use the filter method)
 // Use the filter method and a callback function to check if each name starts with the specified letter.
 
+console.log(`4. Filtering out names starting with specific letter`);
+
+let classArr = [
+  "Aayushi",
+  "Aditi",
+  "Aditya",
+  "Sapna",
+  "Sameer",
+  "Shubham",
+  "Siddharth",
+  "Naman",
+  "Nikhil",
+  "Nitin",
+  "Jay",
+  "Jiya",
+  "Jatin",
+];
+
+console.log(classArr);
+classArr.sort();
+console.log(classArr);
+
+function sortNames(Arr, Letter) {
+  const sortedNames = Arr.filter((arr) => {
+    return arr.charAt(0).toLowerCase() === Letter.toLowerCase();
+  });
+
+  return sortedNames;
+}
+console.log(sortNames(classArr, "A"));
+
 // 5. Write a function to remove all duplicate elements from an array and return a new array with unique elements. (Use the filter and indexOf methods)
 // Use the filter method to filter out the duplicate elements based on their index.
+
+console.log(`5. Removing duplicate array elements`);
 
 // 6. Given an array of objects with 'name' and 'age' properties, write a function to find the oldest person's age. (Use the reduce method)
 // Use the reduce method to find the object with the highest 'age' property.
