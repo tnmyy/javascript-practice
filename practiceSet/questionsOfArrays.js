@@ -81,11 +81,31 @@ console.log(sortNames(classArr, "A"));
 
 console.log(`5. Removing duplicate array elements`);
 
+let arr5 = ["a", "b", "c", "a", "b", "c", "a", "b", "c"];
+console.log(arr5);
+
+function removeDuplicate(Arr) {
+  return Arr.filter((val, ind) => {
+    return Arr.indexOf(val) === ind;
+  });
+}
+console.log(removeDuplicate(arr5));
+
 // 6. Given an array of objects with 'name' and 'age' properties, write a function to find the oldest person's age. (Use the reduce method)
 // Use the reduce method to find the object with the highest 'age' property.
 
 // 7. Write a function to sort an array of numbers in ascending order. (Use the sort method)
 // Use the sort method and a custom compare function for numbers.
+
+console.log(`7. Sorting numbers in ascending order`);
+
+let arr7 = [0, 23, 65, 89, 75, 20, 23, 47, 15, 7, 89, 693, 12, 3, 1];
+console.log(arr7);
+
+arr7.sort((a, b) => {
+  return a - b;
+});
+console.log(arr7);
 
 // 8. Given an array of numbers, write a function to find the maximum and minimum numbers in the array and return them as an object. (Use the reduce method)
 // Use the reduce method to track both the maximum and minimum numbers.
