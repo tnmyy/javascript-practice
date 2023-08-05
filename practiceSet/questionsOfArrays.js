@@ -94,6 +94,27 @@ console.log(removeDuplicate(arr5));
 // 6. Given an array of objects with 'name' and 'age' properties, write a function to find the oldest person's age. (Use the reduce method)
 // Use the reduce method to find the object with the highest 'age' property.
 
+console.log(`6. Sorting an object array on the basis of the property value`);
+
+let arr6 = [
+  { name: "Tanmay", age: 15 },
+  { name: "Ms. Suman Chand", age: 28 },
+  { name: "Mr. Pushkar Singh Kholiya", age: 33 },
+];
+
+console.table(arr6);
+
+function sortAge(Arr) {
+  let oldest = Arr.sort((a1, a2) => {
+    return a2.age - a1.age;
+  });
+
+  return oldest[0];
+}
+
+// sortAge(arr6);
+console.log(sortAge(arr6));
+
 // 7. Write a function to sort an array of numbers in ascending order. (Use the sort method)
 // Use the sort method and a custom compare function for numbers.
 
@@ -110,8 +131,47 @@ console.log(arr7);
 // 8. Given an array of numbers, write a function to find the maximum and minimum numbers in the array and return them as an object. (Use the reduce method)
 // Use the reduce method to track both the maximum and minimum numbers.
 
+console.log(`8. Finding max and min numbers in an array`);
+
+let arr8 = [15, 23, 69, 58, 69, 584, 75, 203, 369, 845, 203, 6987, 236];
+console.log(arr8);
+
+function minMax(Arr) {
+  let minMax = Arr.sort((a, b) => {
+    return b - a;
+  });
+
+  minMax = [minMax[0], minMax[minMax.length - 1]];
+  return minMax;
+}
+
+console.log(minMax(arr8));
+
 // 9. Write a function to count the occurrences of each element in an array and return the result as an object. (Use the reduce method)
 // Use the reduce method to count occurrences by creating a key-value object.
 
+console.log(`9. Counting the occurrence of each array element`);
+
+let arr9 = [
+  1, 1, 2, 3, 5, 6, 8, 9, 7, 1, 1, 2, 3, 5, 4, 6, 6, 9, 7, 2, 3, 4, 5, 2, 1, 0,
+  0, 2, 4, 5, 0, 2, 3, 6, 8, 4, 1,
+];
+
+function occurrence(Arr) {
+  let occur = Arr.reduce((val, ind) => {
+    if (val[ind]) {
+      val[ind] += 1;
+    } else {
+      val[ind] = 1;
+    }
+    return val;
+  }, {});
+  return occur;
+}
+
+console.log(occurrence(arr9));
+
 // 10. Given an array of strings, write a function to find the longest string in the array. (Use the reduce method)
 // Use the reduce method to find the string with the maximum length.
+
+console.log(`10. Finding the longest string length`);
