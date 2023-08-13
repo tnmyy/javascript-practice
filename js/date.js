@@ -55,3 +55,63 @@ console.log(d);
 let msec = Date.parse("August 13, 2023");
 d = new Date(msec);
 console.log(d);
+
+// JS Date Get Methods
+
+console.log(`JS Date Get Methods`);
+
+d = new Date();
+
+console.log(d.getFullYear());
+
+console.log(d.getMonth());
+const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+console.log(months[d.getMonth()]);
+
+console.log(d.getDate());
+
+console.log(d.getHours());
+
+console.log(d.getMinutes());
+
+console.log(d.getSeconds());
+
+console.log(d.getMilliseconds());
+
+console.log(d.getTime()); // ms since 1 Jan, 1970
+
+console.log(d.getDay());
+const days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+console.log(days[d.getDay()]);
+
+console.log(Date.now()); // ms since 1 Jan, 1970
+
+// Year since 1 Jan 1970
+const minute = 1000 * 60;
+const hour = minute * 60;
+const day = hour * 24;
+const year = day * 365;
+
+let years = Math.round(Date.now() / year);
+console.log(years);
