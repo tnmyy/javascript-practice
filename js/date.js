@@ -36,3 +36,22 @@ console.log(d);
 console.log(`Date to string`);
 d = new Date().toString();
 console.log(d);
+
+// JS Date Formats
+
+console.log(`JS Date Formats`);
+
+d = new Date("2023-8-12");
+console.log(d);
+
+d = new Date("Aug 12, 2023");
+console.log(d);
+
+// Parsing Dates
+d = Date.parse("August 13, 2023");
+console.log(d);
+
+// Converting it to Date Object
+let msec = Date.parse("August 13, 2023");
+d = new Date(msec);
+console.log(d);
