@@ -25,5 +25,65 @@ if (isNaN(age)) {
 
 console.log(`?.`);
 
-const car = { type: "Fiat", model: "500", color: "white" };
+const car = { type: "Swift", model: "VXI", color: "Red" };
 console.log(car?.name);
+console.log(car?.type);
+
+// JS Switch
+
+let day;
+let text;
+
+console.log(`JS Switch`);
+
+switch (new Date().getDay()) {
+  case 0:
+    day = "Sunday";
+    break;
+
+  case 1:
+    day = "Monday";
+    break;
+
+  case 2:
+    day = "Tuesday";
+    break;
+
+  case 3:
+    day = "Wednesday";
+    break;
+
+  case 4:
+    day = "Thursday";
+    break;
+
+  case 5:
+    day = "Friday";
+    break;
+
+  case 6:
+    day = "Saturday";
+    break;
+
+  // If no code match
+  default:
+    day = "Enjoy WeekDays";
+}
+
+console.log(day);
+
+// Common Code Blocks
+
+switch (new Date().getDay()) {
+  case 4:
+  case 5:
+    text = "Weekend Soon";
+    break;
+  case 0:
+  case 6:
+    text = "It's Weekend";
+    break;
+  default:
+    text = "Weekend Gone";
+}
+console.log(text);
