@@ -59,3 +59,43 @@ console.log(myMap.entries());
 for (let entries of myMap.entries()) {
   console.log(entries);
 }
+
+// JS Sets
+// Set stores unique values
+
+const mySet = new Set();
+console.log(mySet);
+
+mySet.add("Tanmay");
+mySet.add("TNMY");
+console.log(mySet);
+console.log(mySet.size);
+
+mySet.add("Tanmay");
+console.log(mySet);
+console.log(mySet.size);
+
+mySet.delete("Tanmay");
+mySet.delete("TNMY");
+
+mySet.add(69);
+mySet.add(true);
+mySet.add(false);
+mySet.add({});
+mySet.add([]);
+mySet.add("Tanmay");
+console.log(mySet);
+
+// forEach() in Set
+mySet.forEach((val) => {
+  console.log(val);
+});
+
+// for/of Loop in Set
+// Lists all items in Set
+for (let x of mySet.values()) {
+  console.log(x);
+}
+
+console.log(mySet.has(69));
+console.log(mySet.values());
