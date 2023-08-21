@@ -283,3 +283,21 @@ for (const char of lowerFrequencyStr) {
 for (const char in charFrequency) {
   console.log(`${char}: ${charFrequency[char]}`);
 }
+
+// Factorial Sum: Write a loop that calculates the sum of factorials from 1 to a given number n. For example, if n is 5, the sum would be 1! + 2! + 3! + 4! + 5!.
+
+// FizzBuzz with a Twist: Write a loop that prints numbers from 1 to a given number. For multiples of three, print "Fizz". For multiples of five, print "Buzz". For numbers that are multiples of both three and five, print "FizzBuzz". However, for numbers containing the digit 3, print "Fizz" instead of the number, and for numbers containing the digit 5, print "Buzz" instead of the number.
+
+// Pythagorean Triplets: Write a loop that finds and prints all Pythagorean triplets (a, b, c) where a, b, and c are positive integers and a^2 + b^2 = c^2, with each number in the triplet not exceeding a given limit.
+
+// Prime Factors: Write a loop that finds and prints the prime factors of a given number. For example, if the input is 12, the prime factors are 2 and 3.
+
+// Reverse Number: Write a loop that takes a number as input and returns the reverse of that number. For example, if the input is 12345, the output should be 54321.
+
+// Pascal's Triangle: Write a loop that prints the first n rows of Pascal's Triangle. Pascal's Triangle is a triangular array of binomial coefficients, where each number is the sum of the two directly above it.
+
+// Sum of Digits: Write a loop that calculates the sum of the digits of a given number. For example, if the input is 123, the sum would be 1 + 2 + 3 = 6.
+
+// Mirror Image: Write a loop that prints a mirror image of a given string. For example, if the input is "Hello", the output should be "HelloolleH".
+
+// Geometric Progression: Write a loop that prints the first n terms of a geometric progression with a given initial value and common ratio.

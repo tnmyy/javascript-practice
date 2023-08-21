@@ -170,8 +170,3 @@ function occurrence(Arr) {
 }
 
 console.log(occurrence(arr9));
-
-// 10. Given an array of strings, write a function to find the longest string in the array. (Use the reduce method)
-// Use the reduce method to find the string with the maximum length.
-
-console.log(`10. Finding the longest string length`);
