@@ -98,3 +98,36 @@ obj.name = function () {
 };
 
 console.log(obj.name());
+
+// Object Display
+
+console.log(`Object Display`);
+
+obj = {
+  name: "Tanmay",
+  age: 15,
+  city: "Pithoragarh",
+};
+
+console.log(obj.name + ", " + obj.age + ", " + obj.city);
+
+let txt = "";
+
+for (let x in obj) {
+  txt += obj[x] + " ";
+}
+console.log(txt);
+
+// Object.values()
+// Obj >>> Arr
+console.log(`Object.values()`);
+console.log(Object.values(obj));
+
+// JSON.stringify()
+// Obj >>>> Str
+console.log(`JSON.stringify()`);
+console.log(JSON.stringify(obj));
+
+// Stringify Arrays
+let arr = ["Tanmay", 15, "Pithoragarh"];
+console.log(JSON.stringify(arr));
