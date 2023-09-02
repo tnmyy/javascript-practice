@@ -18,9 +18,9 @@ obj.name = "Tanmay";
 obj.class = "X A";
 console.log(obj);
 
-// Array Properties
+// Object Properties
 
-console.log(`Array Properties`);
+console.log(`Object Properties`);
 
 obj.age = 15;
 console.log(obj);
@@ -83,3 +83,18 @@ for (let i in obj.hobbies) {
     console.log(obj.hobbies[i].routine[j]);
   }
 }
+
+// Objects Methods
+
+console.log(`Objects Methods`);
+
+obj = {
+  firstName: "tanmay",
+  lastName: "upreti",
+};
+
+obj.name = function () {
+  return this.firstName.toUpperCase() + " " + this.lastName.toUpperCase();
+};
+
+console.log(obj.name());
