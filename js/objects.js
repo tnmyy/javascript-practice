@@ -131,3 +131,43 @@ console.log(JSON.stringify(obj));
 // Stringify Arrays
 let arr = ["Tanmay", 15, "Pithoragarh"];
 console.log(JSON.stringify(arr));
+
+// Object Accessors
+// getter & setter = access to property and f(x) = access to method
+
+console.log(`Object Accessors`);
+
+// Getter
+// to manipulate the value of a property before using obj
+console.log(`Getter`);
+obj = {
+  firstName: "Tanmay",
+  lastName: "Upreti",
+  language: "hin",
+
+  get lang() {
+    return this.language.toUpperCase();
+  },
+};
+
+console.log(obj);
+console.log(obj.lang);
+console.log(obj);
+
+// Setter
+// to manipulate the value of a property while setting the val
+console.log(`Setter`);
+obj = {
+  firstName: "Tanmay",
+  lastName: "Upreti",
+  language: "",
+
+  set setLang(lang) {
+    this.language = lang.toUpperCase();
+  },
+};
+obj.setLang = "hin";
+
+console.log(obj);
+console.log(obj.language);
+console.log(obj);
