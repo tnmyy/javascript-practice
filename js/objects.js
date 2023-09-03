@@ -18,9 +18,9 @@ obj.name = "Tanmay";
 obj.class = "X A";
 console.log(obj);
 
-// Object Properties
+// 1. Object Properties
 
-console.log(`Object Properties`);
+console.log(`1. Object Properties`);
 
 obj.age = 15;
 console.log(obj);
@@ -84,9 +84,9 @@ for (let i in obj.hobbies) {
   }
 }
 
-// Objects Methods
+// 2. Objects Methods
 
-console.log(`Objects Methods`);
+console.log(`2. Objects Methods`);
 
 obj = {
   firstName: "tanmay",
@@ -99,9 +99,9 @@ obj.name = function () {
 
 console.log(obj.name());
 
-// Object Display
+// 3. Object Display
 
-console.log(`Object Display`);
+console.log(`3. Object Display`);
 
 obj = {
   name: "Tanmay",
@@ -132,10 +132,10 @@ console.log(JSON.stringify(obj));
 let arr = ["Tanmay", 15, "Pithoragarh"];
 console.log(JSON.stringify(arr));
 
-// Object Accessors
+// 4. Object Accessors
 // getter & setter = access to property and f(x) = access to method
 
-console.log(`Object Accessors`);
+console.log(`4. Object Accessors`);
 
 // Getter
 // to manipulate the value of a property before using obj
@@ -171,3 +171,40 @@ obj.setLang = "hin";
 console.log(obj);
 console.log(obj.language);
 console.log(obj);
+
+// 5. Object Constructors
+
+console.log(`5. Object Constructors`);
+
+function person(first, last, age) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+}
+
+let mySelf = new person("Tanmay", "Upreti", 15);
+console.log(mySelf);
+
+mySelf.nationality = "Indian";
+console.log(mySelf);
+
+mySelf.name = function () {
+  return this.firstName + " " + this.lastName;
+};
+console.log(mySelf.name());
+
+function person(first, last, age) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.newName = (name) => {
+    this.firstName = name;
+  };
+  this.name = function () {
+    return this.firstName + " " + this.lastName;
+  };
+}
+
+console.log(mySelf.name());
+mySelf.newName("TNMY");
+console.log(mySelf.name());
