@@ -208,3 +208,24 @@ function person(first, last, age) {
 console.log(mySelf.name());
 mySelf.newName("TNMY");
 console.log(mySelf.name());
+
+// 6. Object Prototypes
+
+console.log(`6. Object Prototypes`);
+
+function Person(first, last, age) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+}
+
+Person.prototype.nationality = "Indian";
+
+Person.prototype.name = function () {
+  return this.firstName + " " + this.lastName;
+};
+
+mySelf = new Person("Tanmay", "Upreti", 15);
+console.log(mySelf);
+console.log(mySelf.name());
+console.log(mySelf.nationality);
