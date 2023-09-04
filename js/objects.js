@@ -229,3 +229,44 @@ mySelf = new Person("Tanmay", "Upreti", 15);
 console.log(mySelf);
 console.log(mySelf.name());
 console.log(mySelf.nationality);
+
+// 7. Object Iterables
+
+console.log(`7. Object Iterables`);
+
+for (let x of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) {
+  console.log(x);
+}
+
+let x = ["Tanmay", "Vaibhav", "Naman", "Jay"];
+let y = x[Symbol.iterator]();
+
+y.next();
+console.log(y.next());
+console.log(y.next().value);
+console.log(y.next().done);
+console.log(y.next().done);
+console.log(y.next()); // done: true b/c there is no such value in the arr
+
+x = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+y = x[Symbol.iterator]();
+let result = y.next();
+
+while (!result.done) {
+  console.log(result.value);
+  result = y.next();
+}
+
+x = "Tanmay Upreti";
+
+for (let char of x) {
+  console.log(char);
+}
+// x = {
+//   firstName: "Tanmay",
+//   lastName: "Upreti",
+//   age: 15,
+//   nationality: "Indian",
+// };
+// y = x[Symbol.iterator]();
+// console.log(y.next());
