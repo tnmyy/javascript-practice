@@ -262,6 +262,28 @@ x = "Tanmay Upreti";
 for (let char of x) {
   console.log(char);
 }
+
+function numIterator(arr) {
+  let n = 0;
+
+  return {
+    next() {
+      if (n < arr.length) {
+        return { value: arr[n++], done: false };
+      } else {
+        return { done: true };
+      }
+    },
+  };
+}
+
+x = [100, 200, 300];
+num = numIterator(x);
+console.log(num.next());
+console.log(num.next());
+console.log(num.next());
+console.log(num.next());
+
 // x = {
 //   firstName: "Tanmay",
 //   lastName: "Upreti",
