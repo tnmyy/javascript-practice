@@ -284,11 +284,53 @@ console.log(num.next());
 console.log(num.next());
 console.log(num.next());
 
-// x = {
-//   firstName: "Tanmay",
-//   lastName: "Upreti",
-//   age: 15,
-//   nationality: "Indian",
-// };
-// y = x[Symbol.iterator]();
-// console.log(y.next());
+// 8. Object Sets
+// Only stores unique values
+
+console.log(`8. Object Sets`);
+
+obj = new Set();
+obj.add("t");
+obj.add("n");
+obj.add("m");
+obj.add("y");
+console.log(obj);
+
+// forEach()
+console.log(`forEach()`);
+txt = "";
+obj.forEach((x) => {
+  txt += x + " ";
+});
+console.log(txt);
+
+// values()
+console.log(`values()`);
+console.log(obj.values());
+
+x = obj.values();
+txt = "";
+for (let entry of x) {
+  txt += entry + " ";
+}
+console.log(txt);
+
+// keys()
+console.log(`keys()`);
+console.log(obj.keys());
+x = obj.keys();
+txt = "";
+for (let entry of x) {
+  txt += entry + " ";
+}
+console.log(txt);
+
+// entries()
+console.log(`entries()`);
+console.log(obj.entries());
+x = obj.entries();
+txt = "";
+for (let entry of x) {
+  txt += entry + " ";
+}
+console.log(txt);
