@@ -334,3 +334,92 @@ for (let entry of x) {
   txt += entry + " ";
 }
 console.log(txt);
+
+// 9. Object Maps
+
+console.log(`9. Object Maps`);
+
+obj = new Map();
+obj.set("Tanmay", 39);
+obj.set("Vaibhav", 40);
+obj.set("Naman", 20);
+obj.set("Jay", 14);
+console.log(obj);
+
+// get()
+console.log("get()");
+console.log(obj.get("Tanmay"));
+
+// size()
+console.log(`size()`);
+console.log(obj.size);
+
+// delete()
+console.log(`delete()`);
+
+obj.set("Jiya", 15);
+console.log(obj);
+
+obj.delete("Jiya");
+console.log(obj);
+
+// has()
+console.log(`has()`);
+console.log(obj.has("Naman"));
+console.log(obj.has("Jiya"));
+
+// forEach()
+console.log(`forEach()`);
+obj.forEach((val, key) => {
+  console.log(`Roll no. of ${key} is ${val}`);
+});
+
+// entries()
+console.log(`entries()`);
+console.log(obj.entries());
+
+x = obj.entries();
+for (let entries of x) {
+  console.log(entries);
+}
+
+// keys()
+console.log(`keys()`);
+console.log(obj.keys());
+
+x = obj.keys();
+for (let keys of x) {
+  console.log(keys);
+}
+
+// values()
+console.log(`values()`);
+console.log(obj.values());
+
+x = obj.values();
+for (let values of x) {
+  console.log(values);
+}
+
+// clear()
+console.log("clear()");
+console.log(obj);
+obj.clear();
+console.log(obj);
+
+// Object as keys
+
+let tanmay = { name: "tanmay" };
+let vaibhav = { name: "vaibhav" };
+let naman = { name: "naman" };
+let jay = { name: "jay" };
+
+let friends = new Map();
+friends.set(tanmay, 39);
+friends.set(vaibhav, 40);
+friends.set(naman, 20);
+friends.set(jay, 14);
+console.log(friends);
+
+console.log(friends.get(tanmay));
+console.log(friends.get("tanmay"));
