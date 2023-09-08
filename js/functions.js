@@ -53,3 +53,66 @@ const arrFnc = (a, b) => {
 };
 
 console.log(arrFnc(4, 5));
+
+// 2. Function Parameters
+console.log(`2. Function Parameters`);
+
+fnc = function (x, y) {
+  if (y === undefined) {
+    y = 2;
+  }
+  return x + y;
+};
+
+console.log(fnc(2, undefined));
+
+// if value not passed, then-
+console.log(`if value not passed, then`);
+
+fnc = function (x, y = 10) {
+  return x + y;
+};
+console.log(fnc(3));
+
+// rest param
+console.log(`Rest Parameter`);
+
+fnc = function (...x) {
+  let sum = 0;
+
+  for (let args of x) sum += args;
+  return sum;
+};
+
+console.log(fnc(9, 2, 3, 3, 4, 4));
+
+// Arguments Object
+console.log(`Arguments Object`);
+
+x = sumAll(2, 3345, 234, 243124, 345.5521, 341.5788, 2336.598);
+console.log(x);
+
+function sumAll() {
+  let sum = 0;
+
+  for (let arg of arguments) {
+    sum += arg;
+  }
+
+  return sum;
+}
+
+x = findMax(2, 3345, 234, 243124, 345.5521, 341.5788, 2336.598);
+console.log(x);
+
+function findMax() {
+  let max = -Infinity;
+
+  for (let i = 0; i < arguments.length; i++) {
+    if (arguments[i] > max) {
+      max = arguments[i];
+    }
+  }
+
+  return max;
+}
