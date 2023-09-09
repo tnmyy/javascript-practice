@@ -55,6 +55,7 @@ const arrFnc = (a, b) => {
 console.log(arrFnc(4, 5));
 
 // 2. Function Parameters
+
 console.log(`2. Function Parameters`);
 
 fnc = function (x, y) {
@@ -116,3 +117,19 @@ function findMax() {
 
   return max;
 }
+
+// 3. Function Invocation
+
+console.log(`3. Function Invocation`);
+
+// Invoking function as a method
+console.log(`Invoking function as a method`);
+
+fnc = {
+  firstName: "Tanmay",
+  lastName: "Upreti",
+  fullName: function () {
+    return this.firstName + " " + this.lastName;
+  },
+};
+console.log(fnc.fullName());
