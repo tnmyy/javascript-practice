@@ -1,5 +1,7 @@
 console.log(`Functions in JS`);
 
+document.getElementById("body").style.backgroundColor = "#000";
+
 function toCelsius(fahrenheit) {
   let x = (5 / 9) * (fahrenheit - 32);
   x = x.toFixed(2);
@@ -90,7 +92,7 @@ console.log(fnc(9, 2, 3, 3, 4, 4));
 // Arguments Object
 console.log(`Arguments Object`);
 
-x = sumAll(2, 3345, 234, 243124, 345.5521, 341.5788, 2336.598);
+let x = sumAll(2, 3345, 234, 243124, 345.5521, 341.5788, 2336.598);
 console.log(x);
 
 function sumAll() {
@@ -133,3 +135,59 @@ fnc = {
   },
 };
 console.log(fnc.fullName());
+
+// 4. Function Call
+
+console.log(`4. Function Call`);
+
+let person = {
+  fullName: function () {
+    return this.firstName + " " + this.lastName;
+  },
+};
+let person1 = {
+  firstName: "Tanmay",
+  lastName: "Upreti",
+};
+let person2 = {
+  firstName: "Vaibhav",
+  lastName: "Joshi",
+};
+
+x = person.fullName.call(person1);
+console.log(x);
+x = person.fullName.call(person2);
+console.log(x);
+
+person = {
+  fullName: function (city = "City", state = "State", country = "Country") {
+    return (
+      this.firstName +
+      " " +
+      this.lastName +
+      " lives in, " +
+      city +
+      ", " +
+      state +
+      ", " +
+      country
+    );
+  },
+};
+
+person1 = {
+  firstName: "Tanmay",
+  lastName: "Upreti",
+};
+person2 = {
+  firstName: "Vaibhav",
+  lastName: "Joshi",
+};
+x = person.fullName.call(person1, "Pithoragarh", "Uttarakhand", "India");
+console.log(x);
+x = person.fullName.call(person2, "Pithoragarh", "Uttarakhand", "India");
+console.log(x);
+
+console.log(x);
+x = person.fullName.call(person2);
+console.log(x);
