@@ -1,7 +1,5 @@
 console.log(`Functions in JS`);
 
-document.getElementById("body").style.backgroundColor = "#000";
-
 function toCelsius(fahrenheit) {
   let x = (5 / 9) * (fahrenheit - 32);
   x = x.toFixed(2);
@@ -183,6 +181,7 @@ person2 = {
   firstName: "Vaibhav",
   lastName: "Joshi",
 };
+
 x = person.fullName.call(person1, "Pithoragarh", "Uttarakhand", "India");
 console.log(x);
 x = person.fullName.call(person2, "Pithoragarh", "Uttarakhand", "India");
@@ -190,4 +189,46 @@ console.log(x);
 
 console.log(x);
 x = person.fullName.call(person2);
+console.log(x);
+
+// 5. Function Apply
+
+console.log(`5. Function Apply`);
+
+person = {
+  fullName: function () {
+    return this.firstName + " " + this.lastName;
+  },
+};
+person1 = {
+  firstName: "Tanmay",
+  lastName: "Upreti",
+};
+person2 = {
+  firstName: "Vaibhav",
+  lastName: "Joshi",
+};
+
+x = person.fullName.apply(person1);
+console.log(x);
+
+// apply() = accepts args in an array
+
+person = {
+  fullName: function (city = "City", state = "State", country = "Country") {
+    return (
+      this.firstName +
+      " " +
+      this.lastName +
+      " lives in, " +
+      city +
+      ", " +
+      state +
+      ", " +
+      country
+    );
+  },
+};
+
+x = person.fullName.apply(person1, ["Pithoragarh", "Uttarakhand", "India"]);
 console.log(x);
