@@ -232,3 +232,21 @@ person = {
 
 x = person.fullName.apply(person1, ["Pithoragarh", "Uttarakhand", "India"]);
 console.log(x);
+
+// 6. Function Bind
+
+person = {
+  firstName: "Tanmay",
+  lastName: "Upreti",
+  fullName: function () {
+    this.firstName + " " + this.lastName;
+  },
+};
+
+let member = {
+  firstName: "Vaibhav",
+  lastName: "Joshi",
+};
+
+x = person.fullName.bind(member);
+console.log(x);
