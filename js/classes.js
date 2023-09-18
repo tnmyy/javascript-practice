@@ -49,3 +49,54 @@ let year = date.getFullYear();
 tnmy = new Student2("Tanmay", "10", 15);
 console.log(tnmy);
 console.log(tnmy.age(year));
+
+// 2. Class Inheritance
+
+console.log(`2. Class Inheritance`);
+
+class Car {
+  constructor(brand) {
+    this.carName = brand;
+  }
+
+  present() {
+    return `I have a ${this.carName}`;
+  }
+}
+
+class Model extends Car {
+  constructor(brand, mod) {
+    super(brand); // Refers to the parent class
+    this.model = mod;
+  }
+  output() {
+    return this.present() + " " + this.model;
+  }
+}
+
+let myCar = new Model("Mercedes", "Benz");
+console.log(myCar.output());
+
+// Getters and Setters
+console.log(`Getters and Setters`);
+
+class car {
+  constructor(brand) {
+    this._carName = brand;
+  }
+
+  get carName() {
+    return this._carName;
+  }
+
+  set carName(x) {
+    this._carName = x;
+  }
+}
+
+myCar = new car("Nisaan");
+console.log(myCar);
+console.log(myCar.carName);
+
+myCar.carName = "Mahindra";
+console.log(myCar.carName);
