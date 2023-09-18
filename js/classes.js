@@ -100,3 +100,35 @@ console.log(myCar.carName);
 
 myCar.carName = "Mahindra";
 console.log(myCar.carName);
+
+// 3. Class Static
+
+console.log(`3. Class Static`);
+// Only be used with the object class
+
+class Phone {
+  constructor(name) {
+    this._name = name;
+  }
+
+  static hello(x) {
+    return `Hello!! You have bought a ${x._name}`;
+  }
+
+  static hey(x) {
+    return `Hello!! Your name is ${x.name} and you have bought a ${x.phone}`;
+  }
+}
+
+let myPhone = new Phone("Samsung M14");
+console.log(myPhone);
+// console.log(myPhone.hello());
+// console.log(Phone.hello());
+
+console.log(Phone.hello(myPhone));
+
+let x = {
+  name: "Tanmay",
+  phone: "Samsung M14",
+};
+console.log(Phone.hey(x));
