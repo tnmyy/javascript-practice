@@ -2,6 +2,8 @@ console.log(`Errors in JS`);
 
 // 1. JS Errors
 
+console.log(`1. JS Errors`);
+
 console.log(`try...catch`);
 try {
   console.log(x);
@@ -38,3 +40,13 @@ try {
 } catch (err) {
   console.log(err);
 }
+
+// 2. JS Debugging
+
+console.log(`2. JS Debugging`);
+
+let y = 15 * 8;
+
+debugger;
+// Opens Console Debugging window
+console.log(y);
