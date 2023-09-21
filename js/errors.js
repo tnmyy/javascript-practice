@@ -47,6 +47,6 @@ console.log(`2. JS Debugging`);
 
 let y = 15 * 8;
 
-debugger;
+// debugger;
 // Opens Console Debugging window
 console.log(y);
