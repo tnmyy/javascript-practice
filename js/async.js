@@ -32,3 +32,26 @@ function removeNegative(num, cb) {
   }
   return myArr;
 }
+
+// 2. JS Asynchronous
+
+console.log(`2. JS Asynchronous`);
+
+let myFnc = function () {
+  console.log(`Heyy!!!`);
+};
+setTimeout(myFnc, 1000);
+
+myFnc = function () {
+  let d = new Date();
+  //   let hrs = d.getHours();
+  //   let min = d.getMinutes();
+  //   let sec = d.getSeconds();
+
+  //   console.log(`${hrs} : ${min} : ${sec}`);
+
+  let time = d.toLocaleTimeString();
+  console.log(time);
+};
+// setInterval(myFnc, 1000);
+myFnc();
