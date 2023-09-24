@@ -40,7 +40,7 @@ console.log(`2. JS Asynchronous`);
 let myFnc = function () {
   console.log(`Heyy!!!`);
 };
-setTimeout(myFnc, 1000);
+setTimeout(myFnc, 1);
 
 myFnc = function () {
   let d = new Date();
@@ -106,7 +106,7 @@ myProm.then(
 // By Callback
 setTimeout(() => {
   myFunction("I love you!!!");
-}, 3000);
+}, 1);
 
 function myFunction(val) {
   console.log(val);
@@ -117,7 +117,7 @@ function myFunction(val) {
 myProm = new Promise((resolve, reject) => {
   setTimeout(() => {
     resolve("I love you!!!");
-  }, 3000);
+  }, 1);
 });
 
 myProm.then((val) => {
@@ -174,3 +174,56 @@ myProm.then(
     fileDisplay(err);
   }
 );
+
+// 4. JS Async/Await
+
+console.log(`4. JS Async/Await`);
+
+async function myFnc1() {
+  return "HELLO";
+}
+myFnc1().then((val) => {
+  console.log(val);
+});
+myFnc1();
+
+function myFnc2() {
+  return Promise.resolve("Hello");
+}
+myFnc2().then((val) => {
+  console.log(val);
+});
+myFnc2();
+
+async function d() {
+  let myProm = new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("To kese hai ap log");
+    }, 1000);
+  });
+
+  let value = await myProm;
+  console.log(value);
+}
+
+d();
+
+async function fileGet() {
+  let myProm = new Promise((resolve, reject) => {
+    let req = new XMLHttpRequest();
+    req.open("GET", "js/async.js");
+    req.onload = () => {
+      if (req.status === 200) {
+        resolve(req.response);
+      } else {
+        reject("File not Found");
+      }
+    };
+
+    req.send();
+  });
+  let val = await myProm;
+  document.getElementById("body").innerHTML = val;
+}
+
+fileGet();
