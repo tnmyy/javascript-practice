@@ -3,24 +3,91 @@
 
 console.log(`1. Student Records`);
 
-const student = {
-  name: ["Tanmay", "Vaibhav", "Naman", "Jay"],
-  rollNo: [39, 40, 20, 14],
-};
-console.log(student);
+let students = [];
 
-// New Student:
+function addStudent(name_, rollNo_, marks_ = null) {
+  const student = {
+    name: name_,
+    rollNo: rollNo_,
+    marks: marks_,
+  };
 
-function newStu(_name, _rollNo) {
-  student.name.push(_name);
-  student.rollNo.push(_rollNo);
+  students.push(student);
 }
 
-newStu("Jiya", 15);
-console.log(student);
+function updateStudent(name, newMarks) {
+  const studentIndex = students.findIndex((student) => student.name === name);
+
+  if (studentIndex !== -1) {
+    students[studentIndex].marks = newMarks;
+  } else {
+    console.log(`Student with name ${name} not found`);
+  }
+}
+
+addStudent("Tanmay", 39);
+addStudent("Vaibhav", 40);
+addStudent("Naman", 20);
+addStudent("Jay", 14);
+
+console.log(students);
 
 // 2. Product Catalog:
 // Imagine you're building an online store. Create objects to represent products with properties like name, price, and description. Create an array of products and write functions to filter products based on price range or search for products by name.
+
+console.log(`2. Product Catalog`);
+
+const products = [
+  {
+    name: "Fan",
+    price: 150,
+    description: "Gives air out",
+  },
+  {
+    name: "Bat",
+    price: 250,
+    description: "Strikes the balls hard",
+  },
+  {
+    name: "Net",
+    price: 690,
+    description: "Catches chicks precisely",
+  },
+];
+
+console.log(products);
+
+// To filter out products by price
+
+function filterProductsByPrice(min, max) {
+  let output = products.filter(
+    (product) => product.price >= min && product.price <= max
+  );
+  output.forEach((Product) => {
+    console.log(
+      `List of products of price between ₹${min} - ₹${max}:\nName: ${Product.name}, Price: ₹${Product.price}`
+    );
+  });
+}
+
+filterProductsByPrice(100, 200);
+
+// To search products by name
+
+function searchProductsByName(term) {
+  term = term.toLowerCase();
+
+  let output = products.filter((product) =>
+    product.name.toLowerCase().includes(term)
+  );
+
+  output.forEach((product) => {
+    console.log(
+      `Matching search results for '${term}':\nName: ${product.name}, Price: ₹${product.price}`
+    );
+  });
+}
+searchProductsByName("b");
 
 // 3. Address Book:
 // Build an address book using objects to represent contacts with properties like name, phone number, and email. Implement functions to add, delete, and search for contacts in the address book.
