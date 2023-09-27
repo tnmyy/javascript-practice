@@ -92,6 +92,65 @@ searchProductsByName("b");
 // 3. Address Book:
 // Build an address book using objects to represent contacts with properties like name, phone number, and email. Implement functions to add, delete, and search for contacts in the address book.
 
+console.log(`3. Address Book`);
+
+let addressBook = [];
+
+function addContact(name_, contact_, email_) {
+  const contact = {
+    name: name_,
+    contact: contact_,
+    email: email_,
+  };
+
+  addressBook.push(contact);
+  console.log(`Added ${name_} to the address book.`);
+}
+// Delete contact by name
+
+function deleteContact(contactName) {
+  const index = addressBook.findIndex(
+    (contact) => contact.name === contactName
+  );
+
+  if (index !== -1) {
+    const deletedContact = addressBook.splice(index, 1);
+    console.log(`Deleted ${deletedContact[0].name} from the address book.`);
+  } else {
+    console.log(`Contact with name '${name}' not found.`);
+  }
+}
+
+// Search contact by name
+
+function searchContact(contactName) {
+  const foundContacts = addressBook.filter((contact) =>
+    contact.name.toLowerCase().includes(contactName.toLowerCase())
+  );
+
+  if (foundContacts.length > 0) {
+    console.log(`Found Contacts:`);
+
+    foundContacts.forEach((contact) => {
+      console.log(
+        `Name: ${contact.name}, Phone: ${contact.contact}, Email: ${contact.email}`
+      );
+    });
+  } else {
+    console.log(`No contacts found with name '${contactName}'`);
+  }
+}
+
+addContact("Mummy", "123-456-7890", "xyz@gmail.com");
+addContact("Papa", "123-456-7890", "abc@gmail.com");
+addContact("Dadi", "123-456-7890", "pqr@gmail.com");
+console.log(addressBook);
+
+deleteContact("Mummy");
+console.log(addressBook);
+
+searchContact("d");
+
 // 4. Bank Account:
 // Create objects to represent bank accounts with properties like account number, balance, and account holder's name. Write methods to deposit, withdraw, and check the balance.
 
