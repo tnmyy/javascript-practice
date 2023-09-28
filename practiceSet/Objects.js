@@ -154,6 +154,59 @@ searchContact("d");
 // 4. Bank Account:
 // Create objects to represent bank accounts with properties like account number, balance, and account holder's name. Write methods to deposit, withdraw, and check the balance.
 
+console.log(`4. Bank Account:`);
+
+function createBankAccount(holderName_, accountNumber_, balance_) {
+  this.accountNumber = accountNumber_;
+  this.balance = balance_;
+  this.holderName = holderName_;
+
+  // Deposit Money
+  this.deposit = function (amount) {
+    amount = Number.parseInt(amount);
+    if (amount > 0) {
+      this.balance += amount;
+      console.log(`Deposited ₹${amount}. New balance: ₹${this.balance}`);
+    } else {
+      console.log(`Invalid deposit amount. Please enter a valid amount.`);
+    }
+  };
+
+  // Withdraw Amount
+  this.withdraw = function (amount) {
+    amount = Number.parseInt(amount);
+
+    if (amount > 0 && amount <= this.balance) {
+      this.balance -= amount;
+      console.log(`Withdrawn ₹${amount}. New balance ₹${this.balance}`);
+    } else if (amount <= 0) {
+      console.log(`Invalid withdrawal amount. Please enter a positive amount.`);
+    } else {
+      console.log(`Insufficient funds for withdrawal.`);
+    }
+  };
+
+  // Check balance
+  this.checkBalance = function () {
+    console.log(
+      `Account Holder: ${this.holderName}\nAccount Number: ${this.accountNumber}\nNet Balance: ₹${this.balance}`
+    );
+  };
+}
+
+const account1 = new createBankAccount("Tanmay", 987654321, 25052.36);
+const account2 = new createBankAccount("Sarthak", 123456789, 12569.02);
+
+account1.checkBalance();
+account1.deposit(15000.25);
+account1.withdraw(2056.89);
+account1.checkBalance();
+
+account2.checkBalance();
+account2.deposit(20000.5);
+account2.withdraw(3690.37);
+account2.checkBalance();
+
 // 5. Weather App:
 // Build a simple weather application that uses objects to store weather information for different cities. Each city object should have properties like city name, temperature, and weather conditions (e.g., sunny, rainy). Allow users to search for weather data by city name.
 
