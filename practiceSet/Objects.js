@@ -210,6 +210,45 @@ account2.checkBalance();
 // 5. Weather App:
 // Build a simple weather application that uses objects to store weather information for different cities. Each city object should have properties like city name, temperature, and weather conditions (e.g., sunny, rainy). Allow users to search for weather data by city name.
 
+console.log(`5. Weather App`);
+
+const weather = [];
+
+function addCityInfo(city_, temperature_, condition_) {
+  const info = {
+    cityName: city_,
+    temperature: temperature_ + "°C",
+    weatherCondition: condition_,
+  };
+  weather.push(info);
+}
+
+// Search
+
+function searchCity(cityName) {
+  cityName = cityName.toLowerCase();
+
+  const foundCity = weather.find(
+    (name) => name.cityName.toLowerCase() === cityName
+  );
+
+  if (foundCity) {
+    console.log(
+      `City: ${foundCity.cityName}\nTemperature: ${foundCity.temperature}\nWeather Condition: ${foundCity.weatherCondition}`
+    );
+  } else {
+    console.log(`Currently data for '${cityName}' unavailable.`);
+  }
+}
+
+addCityInfo("Pithoragarh", 26, "Sunny");
+addCityInfo("New Delhi", 32, "Cloudy");
+addCityInfo("Mumbai", 29, "Rainy");
+console.log(weather);
+
+searchCity("Pithoragarh");
+searchCity("New Delhi");
+searchCity("Mumbai");
 // 6. To-Do List:
 // Implement a to-do list application using objects to represent tasks with properties like task name, due date, and completion status. Create functions to add, edit, and mark tasks as completed.
 
