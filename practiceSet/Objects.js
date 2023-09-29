@@ -249,8 +249,72 @@ console.log(weather);
 searchCity("Pithoragarh");
 searchCity("New Delhi");
 searchCity("Mumbai");
+
 // 6. To-Do List:
 // Implement a to-do list application using objects to represent tasks with properties like task name, due date, and completion status. Create functions to add, edit, and mark tasks as completed.
+
+console.log(`6. To-Do List`);
+
+let todoList = [];
+
+function createTask(taskName_, dueDate_ = new Date().toDateString()) {
+  const task = {
+    taskName: taskName_,
+    dueDate: dueDate_,
+    completionStatus: false,
+  };
+
+  todoList.push(task);
+  console.log(`Added task: ${taskName_}`);
+}
+
+// Edit task by name
+function editTask(taskName, newTaskName, newDueDate) {
+  const task = todoList.find((task) => task.taskName === taskName);
+
+  if (task) {
+    task.taskName = newTaskName;
+    task.dueDate = newDueDate;
+    console.log(`Edited task: ${taskName}.`);
+  } else {
+    console.log(`Task with name '${taskName}' not found.`);
+  }
+}
+
+// Mark task as completed by name
+function markTaskAsCompleted(taskName) {
+  const task = todoList.find((task) => task.taskName === taskName);
+
+  if (task) {
+    task.completionStatus = true;
+    console.log(`Marked task '${taskName}' as completed.`);
+  } else {
+    console.log(`Task with name '${taskName}' not found.`);
+  }
+}
+
+// Display To-do list
+function displayTodoList() {
+  console.log(`\n\nTo-do List:\n\n`);
+
+  todoList.forEach((task) => {
+    const status = task.completionStatus ? "Completed" : "Incomplete";
+    console.log(
+      `Task: ${task.taskName}\nDue Date: ${task.dueDate}\nStatus: ${status}\n`
+    );
+  });
+}
+
+createTask("English SQP", "Oct 08 2023");
+createTask("Mathematics SQP", "10/10/2023");
+displayTodoList();
+
+createTask("Hindi SQP", "Oct 18 2023");
+markTaskAsCompleted("Hindi SQP");
+displayTodoList();
+
+editTask("Hindi SQP", "Pre-boards", "5/12/23");
+displayTodoList();
 
 // 7. Car Rental System:
 // Design a car rental system using objects to represent cars with properties like make, model, year, and rental price per day. Create methods to rent a car, return a car, and calculate the total rental cost.
