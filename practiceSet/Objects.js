@@ -395,7 +395,73 @@ returnCar("Mercedes", "Benz");
 returnCar("Mercedes", "Benz");
 
 // 8. Social Media Profiles:
-// Create objects to represent user profiles on a social media platform with properties like username, followers, and posts. Implement functions to follow/un-follow users and display a user's feed based on their posts.
+// Create objects to represent user profiles on a social media platform with properties like username, followers, and posts. Implement functions to follow/un-follow users.
+
+console.log(`8. Social Media Profiles`);
+
+let users = [];
+
+function createUser(username_, followers_, posts_) {
+  const user = {
+    username: username_,
+    followers: followers_,
+    posts: posts_,
+  };
+  users.push(user);
+}
+
+// Display users
+function displayUsers() {
+  console.log(`Users:\n`);
+  users.forEach((user) => {
+    console.log(
+      `Username: ${user.username}\nFollowers: ${user.followers}\nPosts: ${user.posts}\n`
+    );
+  });
+}
+
+// Follow Function
+function followUser(userName) {
+  const follow = users.find((user) => user.username === userName);
+
+  if (follow) {
+    let followers = follow.followers;
+    follow.followers++;
+    console.log(
+      `A follower added. Current Followers: ${follow.followers} from the previous ${followers}`
+    );
+  } else {
+    console.log(`User with '${userName}' not found.`);
+  }
+}
+
+// Un-Follow Function
+function unFollowUser(userName) {
+  const follow = users.find((user) => user.username === userName);
+
+  if (follow) {
+    let followers = follow.followers;
+    follow.followers--;
+    console.log(
+      `A follower removed. Current Followers: ${follow.followers} from the previous ${followers}`
+    );
+  } else {
+    console.log(`User with '${userName}' not found.`);
+  }
+}
+
+createUser("upretitanmay", 1090343, 12);
+createUser("bhattG", 98076, 22);
+createUser("joshivaibhav", 1090236, 32);
+// displayUsers();
+
+followUser("bhattG");
+followUser("bhattG");
+followUser("bhattG");
+
+unFollowUser("bhattG");
+unFollowUser("bhattG");
+unFollowUser("bhattG");
 
 // 9. Library Catalog:
 // Build a library catalog system with objects representing books, including properties like title, author, and ISBN. Implement functions to search for books by title, author, or ISBN.
