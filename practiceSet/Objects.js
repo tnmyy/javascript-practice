@@ -319,6 +319,81 @@ displayTodoList();
 // 7. Car Rental System:
 // Design a car rental system using objects to represent cars with properties like make, model, year, and rental price per day. Create methods to rent a car, return a car, and calculate the total rental cost.
 
+console.log(`7. Car Rental System:`);
+
+let carList = [];
+
+function addCar(make_, model_, year_, rentalPrice_) {
+  const car = {
+    make: make_,
+    model: model_,
+    year: year_,
+    rentalPrice: "₹" + rentalPrice_,
+    rented: false,
+    rentStartDate: null,
+  };
+  carList.push(car);
+}
+
+// Display available cars
+function displayCar() {
+  console.log(`\nCars' List: \n`);
+
+  carList.forEach((car) => {
+    console.log(
+      `Company Name: ${car.make}\nModel name: ${car.model}\nModel Year: ${car.year}\nRental Price(per day): ${car.rentalPrice}\n`
+    );
+  });
+}
+
+// Rent a car
+function rentCar(make, model) {
+  const car = carList.find((car) => car.make === make && car.model === model);
+
+  if (car && !car.rented) {
+    car.rented = true;
+    car.rentStartDate = new Date();
+    console.log(`Rented car: ${car.year} ${car.make} ${car.model}`);
+  } else if (!car) {
+    console.log(`Car '${make}' not found in the garage.`);
+  } else {
+    console.log(`Car '${make} ${model}' is already rented.`);
+  }
+}
+
+// Return a rented car
+function returnCar(make, model) {
+  const car = carList.find((car) => car.make === make && car.model === model);
+
+  if (car && car.rented) {
+    const rentEndDate = new Date();
+    const rentalDays =
+      Math.ceil(rentEndDate - car.rentStartDate) / (1000 * 60 * 60 * 24);
+    const totalRent = rentalDays * car.rentalPrice;
+
+    car.rented = false;
+    car.rentStartDate = null;
+
+    console.log(`Return car: ${car.make} ${car.model}`);
+    console.log(`Rental duration: ${car.rentalDays} days.`);
+    console.log(`Total rental cost: ₹${totalRent}`);
+  } else if (!car) {
+    console.log(`Car '${make} ${model}' not found in inventory.`);
+  } else {
+    console.log(`Car '${make} ${model}' is not currently rented.`);
+  }
+}
+
+addCar("Maruti Suzuki", "Alto K10", 2022, 2500);
+addCar("Mercedes", "Benz", 2023, 54200);
+displayCar();
+
+rentCar("Mercedes", "Benz");
+rentCar("Mercedes", "Benz");
+
+returnCar("Mercedes", "Benz");
+returnCar("Mercedes", "Benz");
+
 // 8. Social Media Profiles:
 // Create objects to represent user profiles on a social media platform with properties like username, followers, and posts. Implement functions to follow/un-follow users and display a user's feed based on their posts.
 
