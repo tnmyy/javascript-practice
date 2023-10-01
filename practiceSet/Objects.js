@@ -542,3 +542,65 @@ searchAuthor("H.G. Wells");
 
 // 10. Employee Management:
 // Develop an employee management system using objects to represent employees with properties like name, position, and salary. Create functions to add employees, update their information, and calculate the total payroll.
+
+console.log(`10. Employee Management`);
+
+let employees = [];
+
+function newEmployee(name_, position_, salary_) {
+  const employee = {
+    name: name_,
+    position: position_,
+    salary: salary_,
+  };
+  employees.push(employee);
+}
+
+// Show the employees
+function showEmployees() {
+  console.log(`Employees:-\n`);
+
+  employees.forEach((employee) => {
+    console.log(
+      `Name: ${employee.name}\nPosition: ${employee.position}\nSalary: ₹${employee.salary}/month\n`
+    );
+  });
+}
+
+// Update Information
+function updateEmployee(name, newPosition, newSalary) {
+  const employeeIndex = employees.findIndex((employee) =>
+    employee.name.toLowerCase().includes(name.toLowerCase())
+  );
+
+  if (employeeIndex !== -1) {
+    employees[employeeIndex].position = newPosition;
+    employees[employeeIndex].salary = newSalary;
+
+    console.log(
+      `Updated employee '${name}'\nNew position: ${newPosition}; New salary: ₹${newSalary}`
+    );
+  } else {
+    console.log(`Employee with name '${name}' not found`);
+  }
+}
+
+// Calculate Total Total payroll
+function totalPayroll() {
+  const totalPayroll = employees.reduce(
+    (sum, employee) => sum + employee.salary,
+    0
+  );
+
+  console.log(`Total payroll: ₹${totalPayroll}`);
+}
+
+newEmployee("Tanmay", "Project Manager", 125800);
+newEmployee("Vaibhav", "Data Manager", 105800);
+newEmployee("Naman", "SDE", 103600);
+newEmployee("Jay", "Medical Helper", 105600);
+// showEmployees();
+
+updateEmployee("Tanmay", "CEO", 2256000);
+
+totalPayroll();
