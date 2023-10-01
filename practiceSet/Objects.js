@@ -466,5 +466,79 @@ unFollowUser("bhattG");
 // 9. Library Catalog:
 // Build a library catalog system with objects representing books, including properties like title, author, and ISBN. Implement functions to search for books by title, author, or ISBN.
 
+console.log(`9. Library Catalog:`);
+
+let library = [];
+
+function addBook(title_, author_, isbn_) {
+  const book = {
+    title: title_,
+    author: author_,
+    isbn: isbn_,
+  };
+  library.push(book);
+}
+
+// Show available books
+function displayBooks() {
+  console.log(`Books:\n`);
+  library.forEach((book) => {
+    console.log(
+      `Title: ${book.title}\nAuthor: ${book.author}\nISBN: ${book.isbn}\n`
+    );
+  });
+}
+
+// Search by title
+function searchTitle(Title) {
+  const book = library.find((book) =>
+    book.title.toLowerCase().includes(Title.toLowerCase())
+  );
+
+  if (book) {
+    console.log(
+      `\nTitle: ${book.title}\nAuthor: ${book.author}\nISBN: ${book.isbn}`
+    );
+  } else {
+    console.log(`Book with title '${Title}' not found.`);
+  }
+}
+
+// Search by author
+function searchAuthor(Author) {
+  const book = library.find((book) =>
+    book.author.toLowerCase().includes(Author.toLowerCase())
+  );
+
+  if (book) {
+    console.log(
+      `\nTitle: ${book.title}\nAuthor: ${book.author}\nISBN: ${book.isbn}`
+    );
+  } else {
+    console.log(`Book with author '${Author}' not found.`);
+  }
+}
+
+// Search by ISBN
+function searchISBN(ISBN) {
+  const book = library.find((book) => book.isbn === ISBN);
+
+  if (book) {
+    console.log(
+      `\nTitle: ${book.title}\nAuthor: ${book.author}\nISBN: ${book.isbn}`
+    );
+  } else {
+    console.log(`Book with ISBN '${ISBN}' not found.`);
+  }
+}
+
+addBook("Footprints without feet", "H.G. Wells", 12345678910);
+addBook("A letter to God", "G.L. Fluentes", 98745632102);
+addBook("Do bailo ki katha", "Premchand", 2358741698503);
+displayBooks();
+searchTitle("A letter to God");
+searchISBN(2358741698503);
+searchAuthor("H.G. Wells");
+
 // 10. Employee Management:
 // Develop an employee management system using objects to represent employees with properties like name, position, and salary. Create functions to add employees, update their information, and calculate the total payroll.
