@@ -45,6 +45,64 @@ findNumber("Vaibhav");
 // 2. Inventory Management:
 // Build an inventory management system using a Map to track products by their unique IDs. Implement functions to add products, update quantities, and retrieve product information.
 
+console.log(`1. Inventory Management`);
+
+let inventory = new Map();
+
+// To add product
+function addProduct(id, name, price, quantity) {
+  if (!inventory.has(id)) {
+    const product = {
+      name: name,
+      price: price,
+      quantity: quantity,
+    };
+    inventory.set(id, product);
+
+    console.log(
+      `Added product: ID: ${id}, Name: ${name}, Price: ₹${price}, Quantity: ${quantity}`
+    );
+  } else {
+    console.log(`Product with ID '${id}' already exists`);
+  }
+}
+
+// To update quantity
+function updateQuantity(id, newQuantity) {
+  if (inventory.has(id)) {
+    const product = inventory.get(id);
+    product.quantity = newQuantity;
+    console.log(`Updated quantity of product (ID: ${id} to ${newQuantity})`);
+  } else {
+    console.log(`Product with ID '${id}' already exists`);
+  }
+}
+
+// To retrieve information
+function getInfo(id) {
+  if (inventory.has(id)) {
+    const product = inventory.get(id);
+    console.log(
+      `Product's information:\nID: ${id}\nName: ${product.name}\nPrice: ₹${
+        product.price
+      }\nQuantity: ${product.quantity}\nTotal amount: ₹${
+        product.price * product.quantity
+      }\n`
+    );
+  }
+}
+
+addProduct(9580, "Tripod", 650, 5);
+addProduct(6891, "Barbell", 1500, 12);
+addProduct(5826, "Dumbbell", 2600, 80);
+
+getInfo(9580);
+getInfo(6891);
+getInfo(5826);
+
+updateQuantity(9580, 86);
+getInfo(9580);
+
 // 3. User Authentication:
 // Develop a user authentication system using a Set to store usernames. Implement functions to add new users, check if a username already exists, and manage user access.
 
