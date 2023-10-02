@@ -1,6 +1,47 @@
 // 1. Phone Directory:
 // Create a phone directory using a Map where names are keys and phone numbers are values. Implement functions to add contacts, remove contacts, and look up phone numbers by name.
 
+const phoneDirectory = new Map();
+
+// Function to add contact
+function addContact(name, contact) {
+  if (!phoneDirectory.has(name)) {
+    phoneDirectory.set(name, phoneDirectory);
+    console.log(`Added contact: Name: ${name} and Phone: ${contact}.`);
+  } else {
+    console.log(`Contact with name '${name}' already exists.`);
+  }
+}
+
+// Function to remove contact
+function removeContact(name) {
+  if (phoneDirectory.has(name)) {
+    const removeContact = phoneDirectory.get(name);
+    phoneDirectory.delete(name);
+    console.log(`Removed Contact: ${name}, Phone: ${removeContact}`);
+  } else {
+    console.log(`Contact with name '${name}' not found.`);
+  }
+}
+
+// Function to look up phone numbers by name
+function findNumber(name) {
+  if (phoneDirectory.has(name)) {
+    const phoneNumber = phoneDirectory.get(name);
+    console.log(`Name: ${name}, Phone: ${phoneNumber}`);
+  } else {
+    console.log(`Contact with name '${name}' not found.`);
+  }
+}
+
+addContact("Tanmay", 1234567890);
+addContact("Vaibhav", 9874653210);
+
+removeContact("Tanmay");
+addContact("Tanmay", 1234567890);
+
+findNumber("Vaibhav");
+
 // 2. Inventory Management:
 // Build an inventory management system using a Map to track products by their unique IDs. Implement functions to add products, update quantities, and retrieve product information.
 
