@@ -147,8 +147,106 @@ checkUsername("tnmy");
 // 4. Polling System:
 // Create a polling system using a Map to store poll questions as keys and Set objects for each question to store voter IDs. Implement functions to add new poll questions, record votes, and calculate poll results.
 
+console.log(`4. Polling System`);
+
+const pollingSystem = new Map();
+
+function addPollQuestion(question) {
+  if (!pollingSystem.has(question)) {
+    pollingSystem.set(question, new Set());
+    console.log(`Added new poll question: ${question}`);
+  } else {
+    console.log(`Poll question '${question}' already exists.`);
+  }
+}
+
+function recordVote(question, voterID) {
+  if (pollingSystem.has(question)) {
+    const voterSet = pollingSystem.get(question);
+
+    if (!voterSet.has(voterID)) {
+      voterSet.add(voterID);
+
+      console.log(
+        `Recorded vote for question '${question}' by voter ID ${voterID}`
+      );
+    } else {
+      console.log(
+        `Voter ID ${voterID} has already voted for question '${question}'.`
+      );
+    }
+  } else {
+    console.log(`Poll question '${question}' not found.`);
+  }
+}
+
+function calculatePollResults(question) {
+  if (pollingSystem.has(question)) {
+    const voterSet = pollingSystem.get(question);
+    const totalVotes = voterSet.size;
+    console.log(
+      `Poll Results for question '${question}':\nTotal Votes: ${totalVotes}\nVoter IDs who voted: ${[
+        ...voterSet,
+      ].join(", ")}`
+    );
+  } else {
+    console.log(`Poll question '${question}' not found.`);
+  }
+}
+
+addPollQuestion("Favorite Color?");
+addPollQuestion("Best Programming Language?");
+
+recordVote("Favorite Color?", 123);
+recordVote("Favorite Color?", 456);
+recordVote("Best Programming Language?", 123);
+recordVote("Best Programming Language?", 789);
+recordVote("Best Programming Language?", 123);
+
+calculatePollResults("Favorite Color?");
+calculatePollResults("Best Programming Language?");
+calculatePollResults("Favorite Sport?");
+
 // 5. Shopping Cart:
-// Build a shopping cart system using a Map to store items as keys and their quantities as values. Implement functions to add items, update quantities, and calculate the total cost of items in the cart.
+// Build a shopping cart system using a Map to store items as keys and their quantities as values. Implement functions to add items, update quantities.
+
+console.log(`5. Shopping Cart`);
+
+const cart = new Map();
+
+function addItems(item, quantity) {
+  if (!cart.has(item)) {
+    cart.set(item, quantity);
+    console.log(`Added ${quantity} articles of '${item}' to the cart`);
+  } else {
+    console.log(`'${item}' is already in the cart`);
+  }
+}
+
+function updateItemQuantity(item, newQuantity) {
+  if (cart.has(item)) {
+    let oldQuantity = cart.quantity;
+    cart.quantity = newQuantity;
+    console.log(
+      `Update quantity of '${item}' form ${oldQuantity} to ${newQuantity}`
+    );
+  } else {
+    console.log(`'${item}' not found in the cart.`);
+  }
+}
+
+function showCart() {
+  cart.forEach((val, key) => {
+    console.log(`Item: ${key}, Quantity: ${val}`);
+  });
+}
+
+addItems("Banana", 24);
+addItems("Chocolate", 20);
+showCart();
+
+updateItemQuantity("Banana", 48);
+showCart();
 
 // 6. Language Learning App:
 // Develop a language learning app that uses a Set to store a user's known vocabulary. Implement functions to add new words, remove words, and test the user's vocabulary.
