@@ -106,6 +106,44 @@ getInfo(9580);
 // 3. User Authentication:
 // Develop a user authentication system using a Set to store usernames. Implement functions to add new users, check if a username already exists, and manage user access.
 
+console.log(`3. User Authentication`);
+
+const users = new Set();
+
+function addUser(username) {
+  if (!users.has(username)) {
+    users.add(username);
+    console.log(`Added username: '${username}'.`);
+  } else {
+    console.log(`The username: '${username}' already exists.`);
+  }
+}
+
+function checkUsername(username) {
+  if (users.has(username)) {
+    console.log(`Username: '${username}' exists.`);
+  } else {
+    console.log(`Username: '${username}' not found.`);
+  }
+}
+
+function deleteUsername(username) {
+  if (users.has(username)) {
+    users.delete(username);
+    console.log(`Username: '${username}' deleted.`);
+  } else {
+    console.log(`Username: '${username}' not found.`);
+  }
+}
+
+addUser("tanmay");
+addUser("tnmy");
+addUser("tanmay");
+
+deleteUsername("tnmy");
+addUser("tnmy");
+checkUsername("tnmy");
+
 // 4. Polling System:
 // Create a polling system using a Map to store poll questions as keys and Set objects for each question to store voter IDs. Implement functions to add new poll questions, record votes, and calculate poll results.
 
