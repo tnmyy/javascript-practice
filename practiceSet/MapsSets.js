@@ -248,17 +248,55 @@ showCart();
 updateItemQuantity("Banana", 48);
 showCart();
 
-// 6. Language Learning App:
-// Develop a language learning app that uses a Set to store a user's known vocabulary. Implement functions to add new words, remove words, and test the user's vocabulary.
-
-// 7. Event RSVP System:
+// 6. Event RSVP System:
 // Create an event RSVP system using a Set to store the names of attendees. Implement functions to add attendees, check if someone is attending, and manage event registrations.
 
-// 8. Restaurant Reservation System:
+console.log(`6. Event RSVP System`);
+
+const rsvp = new Set();
+
+function addAttendee(name) {
+  if (!rsvp.has(name)) {
+    rsvp.add(name);
+    console.log(`Added '${name}' to event`);
+  } else {
+    console.log(`'${name}' is already in the event`);
+  }
+}
+
+function checkAttendee(name) {
+  if (rsvp.has(name)) {
+    console.log(`Yes, '${name}' is attending`);
+  } else {
+    console.log(`No, '${name}' is not attending`);
+  }
+}
+
+function manageEventRegistration(name) {
+  if (rsvp.has(name)) {
+    rsvp.delete(name);
+    console.log(`Removed '${name}' from the event`);
+  } else {
+    console.log(`'${name}' not found in the event`);
+  }
+}
+
+addAttendee("Tanmay");
+addAttendee("Naman");
+addAttendee("Vaibhav");
+addAttendee("Jay");
+
+checkAttendee("Tanmay");
+checkAttendee("Siddharth");
+
+manageEventRegistration("Naman");
+manageEventRegistration("Jay");
+
+// 7. Restaurant Reservation System:
 // Build a reservation system for a restaurant using a Map to store reservation times as keys and Set objects to store the names of customers for each time slot. Implement functions to make reservations, check availability, and cancel reservations.
 
-// 9. Library Due Dates:
+// 8. Library Due Dates:
 // Develop a library system using a Map to associate books with their due dates. Implement functions to check out books, set due dates, and track overdue books.
 
-// 10. Social Network Friends:
+// 9. Social Network Friends:
 // Create a social network system using a Map to store users as keys and Sets to store their friends' usernames. Implement functions to add friends, remove friends, and display a user's friend list.
