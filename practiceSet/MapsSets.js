@@ -295,6 +295,66 @@ manageEventRegistration("Jay");
 // 7. Restaurant Reservation System:
 // Build a reservation system for a restaurant using a Map to store reservation times as keys and Set objects to store the names of customers for each time slot. Implement functions to make reservations, check availability, and cancel reservations.
 
+console.log(`7. Restaurant Reservation System`);
+
+const reservationSystem = new Map();
+
+function makeReservation(time, customerName) {
+  if (!reservationSystem.has(time)) {
+    reservationSystem.set(time, new Set());
+  }
+
+  const timeSlot = reservationSystem.get(time);
+
+  if (!timeSlot.has(customerName)) {
+    timeSlot.add(customerName);
+
+    console.log(`Reservation made for ${customerName} at ${time}`);
+  } else {
+    console.log(`${customerName} already has a reservation at ${time}`);
+  }
+}
+
+makeReservation("1:00 PM", "Tanmay");
+makeReservation("1:00 PM", "Kritika");
+makeReservation("11:00 AM", "Jay");
+makeReservation("11:00 AM", "Vaibhav");
+makeReservation("10:00 AM", "Naman");
+
+function checkAvailability(time) {
+  if (reservationSystem.has(time)) {
+    const timeSlot = reservationSystem.get(time);
+    const availableSlots = 10 - timeSlot.size;
+    console.log(`Available slots at ${time}: ${availableSlots} out of 10`);
+  } else {
+    console.log(`No reservations at ${time}.`);
+  }
+}
+
+checkAvailability("1:00 PM");
+checkAvailability("11:00 AM");
+checkAvailability("10:00 AM");
+
+function cancelReservation(time, customerName) {
+  if (reservationSystem.has(time)) {
+    const timeSlot = reservationSystem.get(time);
+
+    if (timeSlot.has(customerName)) {
+      timeSlot.delete(customerName);
+      console.log(
+        `Reservation for ${customerName} at ${time} has been canceled.`
+      );
+    } else {
+      console.log(`${customerName} does not have a reservation at ${time}.`);
+    }
+  } else {
+    console.log(`No reservations at ${time}.`);
+  }
+}
+
+cancelReservation("11:00 AM", "Tanmay");
+cancelReservation("11:00 AM", "Vaibhav");
+
 // 8. Library Due Dates:
 // Develop a library system using a Map to associate books with their due dates. Implement functions to check out books, set due dates, and track overdue books.
 
