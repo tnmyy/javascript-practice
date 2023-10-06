@@ -358,5 +358,21 @@ cancelReservation("11:00 AM", "Vaibhav");
 // 8. Library Due Dates:
 // Develop a library system using a Map to associate books with their due dates. Implement functions to check out books, set due dates, and track overdue books.
 
+console.log(`8. Library Due Dates`);
+
+const library = new Map();
+
+function addBook(book, dueDate) {
+  if (!library.has(book)) {
+    library.set(book, dueDate);
+    console.log(`Issued '${book}' till '${dueDate}'`);
+  } else {
+    console.log(`'${book}' had already issued`);
+  }
+}
+
+addBook("Mathematics X", "10-10-2023");
+addBook("HC Verma I", "10-10-2025");
+
 // 9. Social Network Friends:
 // Create a social network system using a Map to store users as keys and Sets to store their friends' usernames. Implement functions to add friends, remove friends, and display a user's friend list.
