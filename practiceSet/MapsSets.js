@@ -362,17 +362,65 @@ console.log(`8. Library Due Dates`);
 
 const library = new Map();
 
-function addBook(book, dueDate) {
+function issueBook(book, dueDate) {
   if (!library.has(book)) {
     library.set(book, dueDate);
-    console.log(`Issued '${book}' till '${dueDate}'`);
+    console.log(`Issued Book: '${book}', Due Date: '${dueDate}'`);
   } else {
     console.log(`'${book}' had already issued`);
   }
 }
 
-addBook("Mathematics X", "10-10-2023");
-addBook("HC Verma I", "10-10-2025");
+function setDueDate(book, newDueDate) {
+  if (library.has(book)) {
+    library.set(book, newDueDate);
+    console.log(
+      `Updated due date for book: ${book}, New Due Date: ${newDueDate}`
+    );
+  } else {
+    console.log(`Book '${book}' not found.`);
+  }
+}
+
+function trackOverDueBook(currentDate) {
+  console.log(`Overdue Books:`);
+
+  for (const [book, dueDate] of library.entries()) {
+    if (currentDate > dueDate) {
+      console.log(`- ${bookTitle} (Due Date: ${dueDate})`);
+    }
+  }
+}
+
+const currentDate = new Date();
+
+issueBook(
+  "Mathematics X",
+  new Date(
+    currentDate.getFullYear(),
+    currentDate.getMonth(),
+    currentDate.getDate() + 14
+  )
+);
+issueBook(
+  "HC Verma I",
+  new Date(
+    currentDate.getFullYear(),
+    currentDate.getMonth(),
+    currentDate.getDate() + 14
+  )
+);
+
+setDueDate(
+  "HC Verma I",
+  new Date(
+    currentDate.getFullYear(),
+    currentDate.getMonth(),
+    currentDate.getDate() + 15
+  )
+);
+
+trackOverDueBook(currentDate);
 
 // 9. Social Network Friends:
 // Create a social network system using a Map to store users as keys and Sets to store their friends' usernames. Implement functions to add friends, remove friends, and display a user's friend list.
